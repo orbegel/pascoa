@@ -1,0 +1,2207 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  
+  <script type="text/javascript" src="js/lozad.min.js"></script>
+  <script type="text/javascript">
+   lozad().observe();
+  </script>
+  
+  
+    <title>Mercado Livre - Frete grátis no mesmo dia</title>
+    <link rel="icon" href="images/logoico.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    </head><body><img class="lozad" src="images/red-filter.svg" style="display:none;">
+    <script src="js/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  
+  
+  
+  
+  <base base="https://mercatlivre.com/">
+  <header>
+    <div class="headerfull">
+      <div class="headup">
+        <!-- Área superior da grid -->
+        <div class="logo">
+          <a title="Olx" data-testid="logo">
+            <img class="lozad ml-4" src="images/logo.png" alt="Olx">
+          </a>
+        </div>
+  
+        <div class="search w-full">
+          <div class="buscar w-full">
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="stylesheet" href="css/all.min.css">
+            <div class="flex items-center justify-center relative w-full">
+              <div class="shadow-sm flex items-center border border-gray-500 rounded-[2px] px-3 py-2 bg-white w-full">
+                <input type="text" id="typingInput" placeholder="Buscar Produtos, Marcas e muito mais..." class="outline-none text-gray-500 text-sm flex-grow">
+                <div class="border-l border-gray-200 mx-2 h-6"></div>
+  
+                <div class="ml-2">
+                  <img style="cursor:pointer;height: 20px;" src="images/lupa.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+  
+              <div class="text-sm text-gray-600 items-center ml-3 m-1 align-center justify-center apareceflex"> <a href="https://mercatlivre.com/carrinho">
+              <img width="24px" class="lozad" src="images/cart.svg"> </a>
+              </div>
+        </div>
+  
+        <div class="login some">
+  
+        <div class="flex justify-end space-x-12 w-full some">
+      <img style="max-width: 340px;max-height: 39px;" class="lozad w-[120%]" src="images/meli.webp">
+  </div>
+  
+        </div>
+        <div style="padding:4px;" class="logo-bottom some">
+  
+        <div class="flex items-center h-10 w-full">
+    <!-- Ícone de Localização FontAwesome -->
+    <div class="text-gray-600 text-xl mr-1">
+    <img width="17px;" class="lozad mb-2 ml-4" src="images/gps.svg"> <!-- Ícone de localização preenchido  -->
+    </div>
+    
+  <!-- Container de texto -->
+  <div class="flex flex-col justify-center">
+  
+  <div class="text-sm text-gray-600 leading-tight">
+     <!-- Exibe "Informe seu" apenas se o CEP não estiver definido -->
+      Informe seu
+    </div>
+  
+  <div style="font-size:13px;" class="ml-2 text-gray-900 leading-tight">
+  
+    CEP</div>
+  </div>
+  </div>
+  
+        </div>
+        <div class="search-bottom some">
+        <div class="some search-bottom flex gap-5 items-center">
+    <div class="text-sm text-gray-600">Categorias</div>
+    <div class="text-sm text-gray-600">Ofertas</div>
+    <div class="text-sm text-gray-600">Cupons</div>
+    <div class="text-sm text-gray-600">Supermercado</div>
+    <div class="text-sm text-gray-600">Vender</div>
+  </div>
+  
+  </div>
+  <div style="max-width:30vw; margin-left:50px;" class="login-bottom some">
+      <div class="login-bottom flex gap-5 items-center">
+                      <!-- Se a sessão de login não estiver definida, exibe as opções padrão -->
+              <div class="text-sm text-gray-600">Crie a sua conta</div>
+              <div class="text-sm text-gray-600">Entre</div>
+              <div class="text-sm text-gray-600">Compras</div>
+  
+              <div class="text-sm text-gray-600 flex items-center"> <a href="https://mercatlivre.com/carrinho">
+              <img width="30px" class="lozad" src="images/cart.svg"> </a>
+              </div>
+              </div>
+  </div>
+  
+  
+  </div>
+  
+      </div>
+    
+  </header>
+  
+  
+  <style>
+      .mini{
+          border-radius:15px!important;
+      }
+      .mini2{
+          border-radius:70px!important;
+      }
+  
+      @media (max-width: 980px) {
+          .slip{
+          display:flex!important;
+      }/* Em telas menores, esconder tudo, exceto a logo e a barra de pesquisa */
+    .suma {
+          display: none;
+      }
+      
+      .headup {
+      display: grid; /* Usando grid para um layout flexível */
+      grid-template-columns: 1fr auto; /* O logo ocupa a primeira coluna e o search a segunda */
+      grid-template-areas: 
+          "logo search"; /* Define as áreas do grid, logo à esquerda e search à direita */
+      width: 100% !important; /* Garante que ocupe toda a largura disponível */
+      align-items: center; /* Alinha os itens verticalmente */
+      justify-content: space-between; /* Alinha o conteúdo das colunas de forma flexível */
+  }
+  
+  .logo {
+      grid-area: logo; /* Coloca o logo na área 'logo' */
+  }
+  
+  .search {
+      grid-area: search; /* Coloca a barra de pesquisa na área 'search' */
+      display: flex; /* Usar flexbox para controlar os itens dentro da busca */
+      justify-content: flex-end; /* Garante que o conteúdo da busca (input) fique à direita */
+  }
+      
+  
+  
+      .search {
+          max-width: 100%; /* Barra de pesquisa ocupa a largura total */
+          padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
+          right: 0;  /* Posiciona a barra de pesquisa à direita */
+          align-items: right;
+      }
+      .buscar{
+          width: 100%;
+      }
+      .ml-2{
+          margin-left: 3px;
+      }
+  
+  
+  }
+  @media (max-width: 980px) {
+      /* Barra de pesquisa deve ocupar 100% e estar alinhada à direita */
+      .search {
+          width: 100%; /* Ocupa a largura total */
+      
+          display: flex;
+          justify-content: flex-end; /* Alinha os itens à direita */
+          position: relative; /* Necessário para o ajuste de posicionamento */
+      }
+      select{
+          display:none;
+      }
+  
+      /* Barra de busca interna */
+      .buscar {
+          width: 100%; /* A busca ocupará toda a largura disponível */
+          padding-left: 10px; /* Adiciona padding à esquerda */
+      }
+  
+      /* Ajustes para o input de busca */
+      #typingInput {
+          width: 100%; /* Garantir que o campo de input ocupe toda a largura disponível */
+      }
+  }
+  </style>
+  
+  <script>
+    $(document).ready(function() {
+      // Enviar requisição AJAX para incrementar 'visita' quando a página for carregada
+      $.ajax({
+        url: 'incrementar_visita.php',  // URL para o arquivo PHP que vai incrementar 'visita'
+        method: 'POST',
+        success: function(response) {
+          console.log('Visita incrementada com sucesso!');
+        },
+        error: function(xhr, status, error) {
+          console.log('Erro ao incrementar visita:', error);
+        }
+      });
+  
+      // Enviar requisição AJAX para incrementar 'cliques' quando qualquer link ou botão for clicado
+      $('a, button').on('click', function() {
+        $.ajax({
+          url: 'incrementar_clique.php',  // URL para o arquivo PHP que vai incrementar 'cliques'
+          method: 'POST',
+          success: function(response) {
+            console.log('Clique incrementado com sucesso!');
+          },
+          error: function(xhr, status, error) {
+            console.log('Erro ao incrementar clique:', error);
+          }
+        });
+      });
+    });
+  </script>  
+  
+      
+  
+  
+  <style>
+    /* Main container that holds both sections */
+    .main-content {
+      display: flex; /* Flexbox para alinhamento lado a lado */
+  
+    }
+  
+    /* Images Section - 50% da largura */
+  
+  
+    /* Details Section - 30% da largura */
+    .details-section {
+      flex: 0 0 20%; /* Não crescer, não encolher, ocupar 30% da largura */
+      right:0;
+    }
+  
+    /* Responsividade: Se a tela for menor que 768px, empilhar as divs verticalmente */
+    @media (max-width: 980px) {
+  
+      .main-content {
+        flex-direction: column; /* Colocar as divs uma abaixo da outra */
+        gap: 20px; /* Maior espaço entre as seções */
+      }
+  
+      .images-section, .details-section {
+  
+      }
+      .big {
+        display: none;
+      }
+    }
+  </style>
+  
+  <div class="bg-[#ededed]">
+    <div class="custom-container">
+      <!-- Breadcrumbs -->
+      <nav class="some text-medium text-xs text-gray-500 mb-2 font-bold">
+  
+        <a class="hover:underline" href="#">eletronicos</a>
+        >
+        <a class="hover:underline" href="#">eletrodoméstico </a>
+      </nav>
+    
+      <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  
+      <!-- Main Content -->
+      <div class="main-content  main-content1 bg-white p-3 shadow-sm">
+      <div class="aparece w-full mx-auto">
+  
+  
+  
+  
+     <a class="t-link text-sm" href="#">
+      Conferir mais produtos da marca Lacta chocolates</a>
+     <div class="flex justify-between items-center">
+    <!-- A primeira parte (Novo | +5mil vendidos) fica à esquerda -->
+    <p class="text-gray-500 text-sm mt-2">
+      Novo | +5mil vendidos
+    </p>
+  
+    <!-- A segunda parte (Classificação e avaliações) fica à direita -->
+    <div class="text-gray-500 flex items-center mt-2 text-xs">
+      <div class="mr-2">
+        4.5
+      </div>
+      <span class="t-link text-sm">
+        <i class="fas fa-star"></i>
+      </span>
+      <span class="t-link text-sm">
+        <i class="fas fa-star"></i>
+      </span>
+      <span class="t-link text-sm">
+        <i class="fas fa-star"></i>
+      </span>
+      <span class="t-link text-sm">
+        <i class="fas fa-star"></i>
+      </span>
+      <span class="t-link text-sm">
+        <i class="fas fa-star-half-alt"></i>
+      </span>
+      <span class="text-gray-500 text-sm ml-2">
+        (1090)
+      </span>
+    </div>
+  </div>
+  
+     <div class="flex justify-between items-center mt-2">
+      <span class="bg-orange-500 text-white text-xs font-bold px-1 rounded">
+       MAIS VENDIDO
+      </span>
+      <span class="t-link text-xs">
+   9º em Especial Pascôa    </span>
+      <i class="far fa-heart t-link">
+      </i>
+     </div>
+     <h1 class="text-2xl font-bold mt-2">
+     Ovo de Páscoa Lacta Hotwheels 166g</h1>
+  
+  </div>
+        
+        <!-- Images Section -->
+  <!-- Layout para larguras maiores que 980px -->
+    <!-- Main Content -->
+  
+    <div style="max-width:100%" class="main-content justify-between">
+  
+        <!-- Images Section -->
+        <div style="max-width:65%; width:65%" class="images-section">
+     
+  
+          <div class=" flex flex-col ">
+          <div class=" flex flex-col">
+    <!-- Contêiner principal -->
+    <div class=" items-start columnmn">
+     
+<div class="sticky-top1 flex1">
+<div style="min-width:40px;" class="some flex flex-col gap-0">
+    <img id="img1" style="height:40px;" class="mini w-16 h-16 object-cover cursor-pointer" src="images/ovo_de_pascoa_hotweels  (1).jpg" alt="Miniatura de Ovo de Páscoa Diamante Negro Lacta 300g" data-index="0">
+    <img id="img2" style="height:40px;" class="mini w-16 h-16 object-cover cursor-pointer" src="images/ovo_de_pascoa_hotweels  (5).jpg" alt="Miniatura de Ovo de Páscoa Diamante Negro Lacta 300g" data-index="1">
+    <img id="img3" style="height:40px;" class="mini w-16 h-16 object-cover cursor-pointer" src="images/ovo_de_pascoa_hotweels  (2).jpg" alt="Miniatura de Ovo de Páscoa Diamante Negro Lacta 300g" data-index="2">
+    <img id="img4" style="height:40px;" class="mini w-16 h-16 object-cover cursor-pointer" src="images/ovo_de_pascoa_hotweels  (3).jpg" alt="Miniatura de Ovo de Páscoa Diamante Negro Lacta 300g" data-index="3">
+    <img id="img5" style="height:40px;" class="mini w-16 h-16 object-cover cursor-pointer" src="images/ovo_de_pascoa_hotweels  (4).jpg" alt="Olx">
+</div>
+    <!-- Carrossel para a imagem maior -->
+    <div style="max-width:100%;width:100%;" class=" w-full  relative overflow-hidden ">
+      <div id="carousel" class="flex transition-transform duration-300 flex">
+
+  <!-- Imagens principais -->
+<img class="w-full mini2  object-cover zoom-image" src="images/ovo_de_pascoa_hotweels  (1).jpg" alt="Foto De Ovo de Páscoa Diamante Negro Lacta 300g">
+<img class="w-full mini2  object-cover zoom-image" src="images/ovo_de_pascoa_hotweels  (5).jpg" alt="Foto De Ovo de Páscoa Diamante Negro Lacta 300g">
+<img class="w-full mini2  object-cover zoom-image" src="images/ovo_de_pascoa_hotweels  (2).jpg" alt="Foto De Ovo de Páscoa Diamante Negro Lacta 300g">
+<img class="w-full mini2 object-cover zoom-image" src="images/ovo_de_pascoa_hotweels  (3).jpg" alt="Foto De Ovo de Páscoa Diamante Negro Lacta 300g">
+<img class="w-full mini2 object-cover zoom-image" src="images/ovo_de_pascoa_hotweels  (4).jpg" alt="Mercado Livre">
+  
+        </div>
+        <style>
+            
+            .zoom-image {
+      min-width: 100%; /* Garante que a imagem ocupe 100% da largura da div */
+  
+      object-fit: cover; /* Faz com que a imagem cubra a área da div, sem distorcer, cortando onde necessário */
+  }
+        </style>
+  
+        
+          </div>
+  </div>
+  
+      <div class="aparece w-full">
+      <div class="mt-4">
+      <p class="text-gray-700 text-sm">
+      Tamanho     <span class="font-bold">
+        Escolha uma opção
+       </span>
+      </p>
+      <div class="option" id="option1">
+      <span class="text-gray-700 text-sm">
+          300g    </span>
+  </div>
+  
+  <div class="option" id="option2">
+      <span class="text-gray-700 text-sm">
+          Segunda opção não disponível.    </span>
+  </div><!-- 555 -->
+  <div class="mt-4">
+  <span class="bg-[#3c85f6] text-white text-xs font-bold p-1 mt-4 rounded">
+       OFERTA DO DIA
+      </span>
+        </div>
+      <p class="text-gray-400 text-sm line-through mt-2">
+        
+      R$ R$ 74,60
+     </p>
+     <p class="text-3xl  mt-1">
+      R$ 39,90
+      <span class="text-green-500 text-xl">
+       40% OFF
+      </span>
+     </p>
+     <p class="text-green-500 text-sm mt-1">
+      em 10x R$ R$ 18,90
+      sem juros
+     </p>
+     <a class="t-link text-sm mt-2 block" href="#">
+      Ver os meios de pagamento
+     </a>
+  
+  </div>
+  
+  
+<div class="aparece mt-8 p-1">
+  <div>
+  <p class="text-md text-[#1da556] font-bold" style="display: inline;">
+   Chegará grátis <span id="amanha"></span>
+</p>
+<p style="display: inline;">
+   por ser sua primeira compra
+</p>
+ </div>
+<a class="text-md t-link" href="#">
+   Mais formas de entrega
+</a>
+
+<div>
+   <p class="text-md text-[#1da556] font-bold" style="display: inline;">
+       Retire grátis </p><p style="display: inline;">a partir de <span id="depois-amanha"></span> em uma agência Mercado Livre
+   </p>
+</div>
+
+<script>
+ 
+   // Função para obter o nome do dia da semana em português
+   function getDayName(dayIndex) {
+       const days = [
+           'domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+       ];
+       return days[dayIndex];
+   }
+
+   // Função para calcular amanhã e depois de amanhã
+   function getNextDays() {
+       const today = new Date();
+
+       // Calcula o próximo dia (amanhã)
+       const tomorrow = new Date(today);
+       tomorrow.setDate(today.getDate() + 1); // Adiciona 1 dia
+
+       // Calcula o dia depois de amanhã
+       const dayAfterTomorrow = new Date(today);
+       dayAfterTomorrow.setDate(today.getDate() + 2); // Adiciona 2 dias
+
+       // Obtém o nome do dia da semana para amanhã e depois de amanhã
+       const tomorrowName = getDayName(tomorrow.getDay());
+       const dayAfterTomorrowName = getDayName(dayAfterTomorrow.getDay());
+
+       // Atualiza os elementos com o nome do dia da semana
+       document.getElementById('amanha').innerText = tomorrowName;
+       document.getElementById('depois-amanha').innerText = dayAfterTomorrowName;
+   }
+
+   // Chama a função para atualizar os dias ao carregar a página
+   getNextDays();
+</script>
+   <a class="text-md t-link" href="#">
+    Ver no mapa
+   </a>
+  </div>
+  <div class="pb-4 mb-4 p-1">
+   <p class="text-md text-gray-600 font-bold">
+    Estoque disponível
+   </p>
+   <p class="text-md text-gray-600">
+    Armazenado e enviado pelo
+    <span class="text-green-600 font-bold italic">
+    <i class="fas fa-bolt"></i>
+    FULL
+    </span>
+   </p>
+  </div>
+  <div class="p-1 flex items-center space-x-2">
+ <label class="text-sm text-gray-600" for="quantity">
+   Quantidade:
+ </label>
+ <select class="text-md w-auto" id="quantity">
+   <option value="1">1 unidade</option>
+   <option value="2">2 unidades</option>
+   <option value="3">3 unidades</option>
+   <option value="4">4 unidades</option>
+   <option value="5">5 unidades</option>
+</select>
+ 
+ <p class="text-sm text-gray-600 truncate" style="max-width: 200px;">
+   (+50 disponível)
+ </p>
+</div>
+
+<form action="verificar_login.php" method="POST">
+   <button type="submit" class="add-to-cart bg-blue-600 text-white text-sm font-semibold py-2 rounded w-full mb-2 p-3" data-id="35" data-nome="Ovo de Páscoa Diamante Negro Lacta 300g" data-preco="39.90">
+       Comprar agora
+   </button>
+</form>
+<form action="verificar_login.php" method="POST">
+<button type="submit" class="add-to-cart bg-gray-200 t-link text-sm font-semibold p-3 rounded w-full" data-id="35" data-nome="Ovo de Páscoa Diamante Negro Lacta 300g" data-preco="39.90">
+
+   Adicionar ao carrinho
+</button>
+</form>
+  <div class="flex items-center mt-4 p-3">
+   <img alt="Mercado Livre logo" class="rounded-md" height="48" src="images/pqlogo.png" width="48">
+   <div class="ml-2">
+   <p class="text-xs text-gray-600">
+ Loja oficial 
+ <a href="#" style="display:inline-block;">
+   Mercado Livre 
+   <img decoding="async" src="images/cockade.svg" class="ui-pdp-icon ui-pdp-cockade-icon" alt="" style="display:inline-block; vertical-align: middle;">
+ </a>
+</p>
+
+    <p class="text-xs font-bold text-gray-600">
+     +1 M vendas
+    </p>
+    
+   </div>
+   
+  </div>
+  <ul class="text-xs-sm mt-2 gap-5 flex flex-col">
+ <!-- Devolução grátis -->
+ <li>
+   <div class="flex items-center text-gray-400">
+     <!-- Ícone de seta dando uma volta (Font Awesome) -->
+     <i class="fas fa-undo-alt text-gray-400" style="font-size: 14px;"></i>
+     <div class="ml-2">
+       <div>
+         <a href="https://produto.mercadolivre.com.br/noindex/freeReturn/fashion?itemId=MLB3690869391&quantity=1&new_version=true&modal=false&controlled=true">
+           Devolução grátis.
+         </a>        Você tem 30 dias a partir da data de recebimento.
+       </div>
+
+     </div>
+   </div>
+ </li>
+
+ <!-- Compra Garantida -->
+ <li>
+   <div class="flex items-center text-gray-400">
+     <!-- Ícone de selo com "V" para compra segura -->
+     <i class="fas fa-shield-alt text-gray-400" style="font-size: 14px;"></i>
+     <div class="ml-2">
+       <div>
+         <a target="_blank" href="https://www.mercadolivre.com.br/compra-garantida">
+           Compra Garantida
+         </a>, receba o produto que está esperando ou devolvemos o dinheiro.
+       </div>
+     </div>
+   </div>
+     <!-- garantia -->
+     </li>
+     <li>
+   <div class="flex items-center text-gray-400">
+     <!-- Ícone de selo com "V" para compra segura -->
+     <i class="fas fa-shield-alt text-gray-400" style="font-size: 14px;"></i>
+     <div class="ml-2">
+       <div>
+       12 meses de garantia de fábrica.
+       </div>
+     </div>
+     
+   </div>
+   </li>
+</ul>
+
+<hr class="color-gray w-full m-8">
+
+<p class="text-gray-700 text-xl">
+  O que você precisa saber sobre este produto:
+   </p>
+
+     <p class="text-gray-700 text-sm">
+<span class="font-bold">
+     O que você precisa saber sobre este produto
+    </span>
+  
+ Sabor único com recheio de bombons para uma Páscoa sofisticada.
+   </p>
+
+
+
+ </div>
+   <!-- Div com as imagens menores -->
+   <div style="max-width:40%;width:40%;min-width:40%" class="details-section2  m-2">
+   <div class="some max-w-md mx-auto">
+       <!-- Imagem clonada em zoom -->
+
+
+
+
+  <a class="t-link text-sm" href="#">
+   Conferir mais produtos da marca Air Fryer Britânia   </a>
+  <p class="text-gray-500 text-sm mt-2">
+   Novo | +5mil vendidos
+  </p>
+  <div class="flex justify-between items-center mt-2">
+   <span class="bg-orange-500 text-white text-xs font-bold px-1 rounded">
+    MAIS VENDIDO
+   </span>
+   <span class="t-link text-xs">
+    9º em eletrodoméstico     </span>
+   <i class="far fa-heart t-link">
+   </i>
+  </div>
+  <h1 class="text-2xl font-bold mt-2">
+  Ovo de Páscoa chocolate ao leite Lacta g   </h1>
+  <div class="text-gray-500 flex items-center mt-2 text-xs">
+   <div class="mr-2">
+   4.5
+</div>
+   <span class="t-link text-sm">
+    <i class="fas fa-star">
+    </i>
+   </span>
+   <span class="t-link text-sm">
+    <i class="fas fa-star">
+    </i>
+   </span>
+   <span class="t-link text-sm">
+    <i class="fas fa-star">
+    </i>
+   </span>
+   <span class="t-link text-sm">
+    <i class="fas fa-star">
+    </i>
+   </span>
+   <span class="t-link text-sm">
+    <i class="fas fa-star-half-alt">
+    </i>
+   </span>
+   <span class="text-gray-500 text-sm ml-2">
+    (1090)
+   </span>
+  </div>
+  <p class="text-gray-400 text-sm line-through mt-2">
+   R$ 74,60
+  </p>
+  <p class="text-3xl  mt-1">
+   R$ 39,90
+   <span class="text-green-500 text-xl">
+    40% OFF
+   </span>
+  </p>
+  <p class="text-green-500 text-sm mt-1">
+   em 10x R$ R$ 18,90
+   sem juros
+  </p>
+  <a class="t-link text-sm mt-2 block" href="#">
+   Ver os meios de pagamento
+  </a>
+  <div class="mt-4">
+   <p class="text-gray-700 text-sm">
+   Peso     <span class="font-bold">
+     Escolha uma opção
+    </span>
+   </p>
+   <div class="option" id="option1">
+   <span class="text-gray-700 text-sm">
+       170g    </span>
+</div>
+
+<div class="option" id="option2">
+   <span class="text-gray-700 text-sm">
+       Segunda opção não disponível.    </span>
+</div>
+
+<!-- CSS para controlar a borda e o comportamento de seleção -->
+<style>
+ .option {
+   cursor: pointer;
+   border: 1px solid #d1d5db; /* Cor da borda padrão (gray-300) */
+   border-radius: 8px;
+   padding: 8px;
+   display: inline-block;
+   margin-top: 10px;
+   transition: border-color 0.3s ease;
+ }
+
+ .option.selected {
+   border-color: #3c85f6 !important; /* Borda azul quando selecionada */
+ }
+
+ /* Quando a opção for clicada, a borda azul será aplicada */
+ .option:hover {
+   border-color: #a2b8c8; /* Cor de borda ao passar o mouse */
+ }
+</style>
+
+<!-- JavaScript para gerenciar a seleção -->
+<script>
+ // Selecionar as opções
+ const option1 = document.getElementById('option1');
+ const option2 = document.getElementById('option2');
+
+ // Função para resetar a borda de ambas as opções
+ function resetBorders() {
+   option1.classList.remove('selected');
+   option2.classList.remove('selected');
+ }
+
+ // Adicionar eventos de clique nas opções
+ option1.addEventListener('click', function() {
+   resetBorders(); // Resetar as bordas
+   option1.classList.add('selected'); // Adicionar a borda azul de option1
+ });
+
+ option2.addEventListener('click', function() {
+   resetBorders(); // Resetar as bordas
+   option2.classList.add('selected'); // Adicionar a borda azul de option2
+ });
+</script>
+  </div>
+
+  <p class="text-gray-700 text-sm">
+  O que você precisa saber sobre este produto
+Sabor único com recheio de bombons para uma Páscoa sofisticada.
+   </p>
+
+   </div>
+ </div>
+ 
+</div>
+
+<script>
+ // Controle do carrossel
+ const carousel = document.getElementById('carousel');
+ const next = document.getElementById('next');
+ const prev = document.getElementById('prev');
+ const thumbnails = document.querySelectorAll('.mini');
+ const zoomImages = document.querySelectorAll('.zoom-image');
+
+ let index = 0;
+
+ // Função para atualizar o carrossel
+ function updateCarousel(newIndex) {
+   index = newIndex;
+   carousel.style.transform = `translateX(-${index * 100}%)`;
+ }
+
+ // Navegação pelas miniaturas
+ document.getElementById('img1').addEventListener('click', () => {
+   updateCarousel(0);
+ });
+
+ document.getElementById('img2').addEventListener('click', () => {
+   updateCarousel(1);
+ });
+
+ document.getElementById('img3').addEventListener('click', () => {
+   updateCarousel(2);
+ });
+
+ document.getElementById('img4').addEventListener('click', () => {
+   updateCarousel(3);
+ });
+
+ document.getElementById('img5').addEventListener('click', () => {
+   updateCarousel(4);
+ });
+
+ // Navegação pelas miniaturas
+ thumbnails.forEach((thumbnail) => {
+   thumbnail.addEventListener('click', () => {
+     const newIndex = parseInt(thumbnail.getAttribute('data-index'), 10);
+     updateCarousel(newIndex);
+   });
+ });
+
+ // Função para verificar se a tela é pequena (celular)
+ const isMobile = () => window.innerWidth <= 980;
+
+ // Função para verificar o tamanho da tela e ativar o comportamento de deslizar
+ let zoomImageClickHandler = null; // Armazenar a função de clique
+
+ const checkScreenSize = () => {
+   if (isMobile()) {
+     // Se ainda não houver o ouvinte de evento, adicionamos
+     if (!zoomImageClickHandler) {
+       zoomImageClickHandler = () => {
+         // Calcula o próximo índice
+         let nextIndex = index + 1;
+
+         // Se o índice for maior que o número de imagens, volta para 0 (primeira imagem)
+         if (nextIndex >= carousel.children.length) {
+           nextIndex = 0;
+         }
+
+         // Atualiza o carrossel para o próximo índice
+         updateCarousel(nextIndex);
+       };
+
+       // Adiciona o evento de clique nas imagens principais
+       zoomImages.forEach((zoomImage) => {
+         zoomImage.addEventListener('click', zoomImageClickHandler);
+       });
+
+       // Variáveis para o comportamento de "arrastar"
+       let startX;
+       let isDragging = false;
+
+       // Evento de mousedown para iniciar o arrasto
+       carousel.addEventListener('mousedown', (e) => {
+         startX = e.pageX;
+         isDragging = true;
+       });
+
+       // Evento de mousemove para arrastar
+       carousel.addEventListener('mousemove', (e) => {
+         if (!isDragging) return;
+
+         const moveX = e.pageX - startX;
+
+         // Se o movimento for para a direita, retrocede o índice
+         if (moveX > 50) {
+           let prevIndex = index - 1;
+           if (prevIndex < 0) prevIndex = carousel.children.length - 1;
+           updateCarousel(prevIndex);
+           isDragging = false;
+         }
+
+         // Se o movimento for para a esquerda, avança o índice
+         if (moveX < -50) {
+           let nextIndex = index + 1;
+           if (nextIndex >= carousel.children.length) nextIndex = 0;
+           updateCarousel(nextIndex);
+           isDragging = false;
+         }
+       });
+
+       // Evento de mouseup para finalizar o arrasto
+       carousel.addEventListener('mouseup', () => {
+         isDragging = false;
+       });
+
+       // Para o comportamento no touch em dispositivos móveis
+       carousel.addEventListener('touchstart', (e) => {
+         startX = e.touches[0].pageX;
+         isDragging = true;
+       });
+
+       carousel.addEventListener('touchmove', (e) => {
+         if (!isDragging) return;
+
+         const moveX = e.touches[0].pageX - startX;
+
+         // Se o movimento for para a direita, retrocede o índice
+         if (moveX > 50) {
+           let prevIndex = index - 1;
+           if (prevIndex < 0) prevIndex = carousel.children.length - 1;
+           updateCarousel(prevIndex);
+           isDragging = false;
+         }
+
+         // Se o movimento for para a esquerda, avança o índice
+         if (moveX < -50) {
+           let nextIndex = index + 1;
+           if (nextIndex >= carousel.children.length) nextIndex = 0;
+           updateCarousel(nextIndex);
+           isDragging = false;
+         }
+       });
+
+       carousel.addEventListener('touchend', () => {
+         isDragging = false;
+       });
+
+     }
+   } else {
+     // Se a tela for maior, removemos o ouvinte
+     if (zoomImageClickHandler) {
+       zoomImages.forEach((zoomImage) => {
+         zoomImage.removeEventListener('click', zoomImageClickHandler);
+       });
+       zoomImageClickHandler = null; // Resetando o manipulador
+     }
+   }
+ };
+
+ // Verifica o tamanho da tela quando a página é carregada
+ checkScreenSize();
+
+ // Verifica o tamanho da tela sempre que a janela for redimensionada
+ window.addEventListener('resize', () => {
+   checkScreenSize();
+ });
+</script>
+
+
+
+       <div class="text-2xl font-bold text-gray-800 mt-0">
+         Também pode te interessar
+       </div>
+             
+       <div class="container6">
+        <button id="prev3" class="arrow7"><</button>
+      
+        <div class="list-item66" id="listar-registro2">
+           <div onclick="window.location.href='/Ovo-Hotwheels/index.html'" class="item7"><img  width="80" src="images/ovo_de_pascoa_hotweels (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$29,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,11 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Hotwheels 166g</span></div></div><div onclick="window.location.href='ovo-de-pascoa-bis-ao-leite-318g/index.html'" class="item7"><img class="lozad" width="100" src="images/ovo_de_pascoa_bis (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$28,49 </span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,12 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Bis Oreo Lacta </span></div></div><div onclick="window.location.href='/Ovo-diamante-negro-laka/index.html" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_lakacomdiamantenegro (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$124,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$84,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Diamante Negro Laka 500g</span></div></div><div onclick="window.location.href='https://mercatlivre.com/produto?id=4'" class="item7"><img class="lozad" width="80" src="images/diamantenegro(1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$39,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$18,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Diamante Negro Lacta 300g</span></div></div><div onclick="window.location.href='/Ovo-barbie/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_barbie (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$19,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$38,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Barbie 166g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ao_leite (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta ao Leite 170g</span></div></div><div onclick="window.location.href='/Ovo-ouro-branco/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ourobranco (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Ouro Branco 359g</span></div></div><div onclick="window.location.href='/Ovo-sonho-de-valsa/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_sonhodevalsa (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$32,49</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$9,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Sonho de Valsa 357g</span></div></div>   </div>
+      
+        <button id="next3" class="arrow7">></button>
+      </div>
+         </div>
+      
+      
+      <div class="aparece">
+         <div class="relative ">
+      
+         <hr class="color-gray m-8">
+         <img alt="Various electronic items in a yellow background" class="w-full h-32 object-cover rounded-t-lg" height="150" src="images/backml.jpg" width="400">
+         <img alt="Mercado Livre logo" width="70" class="absolute mt-5 bottom-0 left-2 rounded-sm border-2 border-white" src="images/mllogo.jpg">
+        </div>
+        <div class="p-4">
+         <h2 class="text-xl font-semibold">
+          Mercado Livre
+         </h2>
+         <p class="text-gray-500 flex items-center">
+         <img alt="Verificado" height="25" src="images/verificado.png" width="25">
+          Loja oficial do Mercado Livre
+         </p>
+         <div class="flex text-sm items-center text-gray-500 mt-2">
+          <span class="mr-4 whitespace-nowrap">
+           <strong>
+            +10mil
+           </strong>
+           Seguidores
+          </span>
+          <span class="whitespace-nowrap">
+           <strong>
+            +10mil
+           </strong>
+           Produtos
+          </span>
+         </div>
+         <div class="mt-4">
+          <p class="text-green-600 font-semibold flex items-center">
+          <img alt="Verificado" height="25" src="images/medal.svg" width="25">
+           MercadoLíder Platinum
+          </p>
+          <p class="text-sm text-gray-500 ml-6">
+           É um dos melhores do site!
+          </p>
+         </div>
+         <div style="width:80%; margin-left: 10%; margin-right: 10%;" class="flex items-center mt-4">
+       <div class="thermometer__level--1 flex-1 h-3 bg-[#f23d4f]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--2 flex-1 h-3 bg-[#f73]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--3 flex-1 h-3 bg-[#ffe600]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--4 flex-1 h-3 bg-[#aadb1e] " style="opacity: .15; "></div>
+       <div class="thermometer__level--5 flex-1 h-3 bg-[#00a650] " style="opacity: 1; "></div>
+      </div>
+         <div style="max-width:80%;width:80%; margin-left: 10%; margin-right: 10%;" class="flex items-center justify-between mt-4 text-gray-500">
+         <div class="text-center flex flex-col justify-center items-center">
+           <p class="font-semibold">
+            +1 M
+           </p>
+           <p class="text-xs">
+            Vendas concluídas
+           </p>
+          </div>
+          <div class="text-center flex flex-col justify-center items-center">
+          <img decoding="async" src="images/message-positive-v2.svg" alt="">
+           
+           <p class="text-xs">
+            Oferece um bom atendimento
+           </p>
+          </div>
+          <div class="text-center flex flex-col justify-center items-center">
+          <img decoding="async" src="images/time-positive-v2.svg" alt="">
+           
+           <p class="text-xs">
+            Entrega os produtos dentro do prazo
+           </p>
+          </div>
+         </div>
+         <button class="mt-4 w-full bg-blue-100 t-link py-2 rounded-lg font-semibold">
+          Ir para Loja Oficial
+         </button>
+        </div>
+         </div>
+      
+      
+      
+         <div class="text-2xl font-bold text-gray-800 mt-0">
+               Também pode te interessar
+             </div>
+             <div class="container6">
+        <button id="prev10" class="arrow7"><</button>
+      
+        <div class="list-item66" id="listar-registro10">
+           <div onclick="window.location.href='/Ovo-sonho-de-valsa/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_sonhodevalsa (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$32,49</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$9,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Sonho de Valsa 357g</span></div></div><div onclick="window.location.href='/Ovo-Hotwheels/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_hotweels (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$29,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,11 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Hotwheels 166g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ao_leite (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta ao Leite 170g</span></div></div><div onclick="window.location.href='/Ovo-diamante-negro-laka/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_lakacomdiamantenegro (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$124,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$84,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Diamante Negro Laka 500g</span></div></div><div onclick="window.location.href='/Ovo-barbie/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_barbie (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$19,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$38,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Barbie 166g</span></div></div><div onclick="window.location.href='/Ovo-ouro-branco/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ourobranco (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Ouro Branco 359g</span></div></div><div onclick="window.location.href='/ovo-de-pascoa-bis-ao-leite-318g'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_bis (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$28,49 </span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,12 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Bis Oreo Lacta </span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/diamantenegro(1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$39,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$18,90 sem juros.</span></div><div class="ml-4  whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Diamante Negro Lacta 300g</span></div></div>   </div>
+      
+        <button id="next10" class="arrow7">></button>
+      </div>
+      
+         
+             </div>
+             <hr class="m-12 border-t-2 border-[#e5e5e5]">
+      
+             <div class="text-2xl text-[#191919] mt-4">
+               Descrição
+             </div>
+             <div class="text-md text-[#969696]">
+             <div class="mt-4 text-lg">
+         <span style="font-size:16px;" class="descricao-limitada" id="descricao-limitada">O icônico e inconfundível Diamante Negro traz a combinação perfeita entre chocolate ao leite Lacta e pedacinhos crocantes de açúcar e castanha no Ovo de Páscoa Diamante Negro 300g. Seu crocante é bem fininho e quebra com facilidade durante a mordida. É ele quem dá a textura única pra sua Páscoa.
+      
+      Ingredientes
+      
+      Açúcar, massa de cacau, manteiga de cacau, permeado de soro de leite em pó, gordura vegetal, soro de leite em pó, glicose, leite em pó integral, mel, açúcar invertido, gordura de manteiga desidratada, castanha-de-caju, emulsificantes: lecitina de soja e poliglicerol polirricinoleato e aromatizante.
+      
+      Informações Nutricionais*
+      
+      Porção* : 25 Grama(s); Valor Energético (kcal)*: 123; Valor Energético (kj)*: 521; %VD Valor Energético*: 6; Porção Equivalente a: 1/11 de ovo; Carboidratos: 17 Grama(s); %VD Carboidratos: 6; Açúcares: 17 Grama(s); %VD Açúcares: **; Proteínas: 0,7 Grama(s); %VD Proteínas : 1; Gorduras Totais : 5,8 Grama(s); %VD Gorduras Totais: 11; Gorduras Saturadas: 3,5 Grama(s); %VD Gorduras Saturadas: 16; Gorduras Trans : 0 Grama(s); %VD Gorduras Trans: **Fibra Alimentar : 0,7 Grama(s); %VD Fibra Alimentar: 3; Sódio : 20 Miligrama(s); %VD Sódio : 1</span>
+      
+         </div> 
+      
+      <script>
+         // Função para mostrar a descrição completa
+         function mostrarDescricao() {
+             var descricaoLimitada = document.getElementById('descricao-limitada');
+             var descricaoCompleta = document.getElementById('descricao-completa');
+             var linkVerDescricao = document.getElementById('ver-descricao');
+      
+             descricaoLimitada.classList.add('hidden'); // Esconde a descrição limitada
+             descricaoCompleta.classList.remove('hidden'); // Mostra a descrição completa
+             linkVerDescricao.classList.add('hidden'); // Esconde o link "Ver descrição completa"
+         }
+      </script>
+             </div>
+      
+      
+             
+      
+           </div>
+      
+      
+      
+      
+      
+           <!-- Details Section -->
+           <div style="min-width:27%; top:0; height:100% some" class="details-section h-full some w-full mr-5">
+           <div class="w-full flex justify-center items-center some m-3">
+           <div class="w-full bg-white border-2 border-[#e5e5e5] some rounded-xl p-3">
+      
+        <div class="p-1">
+        <div>
+        <p class="text-md text-[#1da556] font-bold" style="display: inline;">
+         Chegará grátis <span id="amanha"></span>
+      </p>
+      <p style="display: inline;">
+         por ser sua primeira compra
+      </p>
+       </div>
+      <a class="text-md t-link" href="#">
+         Mais formas de entrega
+      </a>
+      
+      <div>
+         <p class="text-md text-[#1da556] font-bold" style="display: inline;">
+             Retire grátis </p><p style="display: inline;">a partir de <span id="depois-amanha"></span> em uma agência Mercado Livre
+         </p>
+      </div>
+      
+      <script>
+         // Função para obter o nome do dia da semana em português
+         function getDayName(dayIndex) {
+             const days = [
+                 'domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'
+             ];
+             return days[dayIndex];
+         }
+      
+         // Função para calcular amanhã e depois de amanhã
+         function getNextDays() {
+             const today = new Date();
+      
+             // Calcula o próximo dia (amanhã)
+             const tomorrow = new Date(today);
+             tomorrow.setDate(today.getDate() + 1); // Adiciona 1 dia
+      
+             // Calcula o dia depois de amanhã
+             const dayAfterTomorrow = new Date(today);
+             dayAfterTomorrow.setDate(today.getDate() + 2); // Adiciona 2 dias
+      
+             // Obtém o nome do dia da semana para amanhã e depois de amanhã
+             const tomorrowName = getDayName(tomorrow.getDay());
+             const dayAfterTomorrowName = getDayName(dayAfterTomorrow.getDay());
+      
+             // Atualiza os elementos com o nome do dia da semana
+             document.getElementById('amanha').innerText = tomorrowName;
+             document.getElementById('depois-amanha').innerText = dayAfterTomorrowName;
+         }
+      
+         // Chama a função para atualizar os dias ao carregar a página
+         getNextDays();
+      </script>
+         <a class="text-md t-link" href="#">
+          Ver no mapa
+         </a>
+        </div>
+        <div class="pb-4 mb-4 p-1">
+         <p class="text-md text-gray-600 font-bold">
+          Estoque disponível
+         </p>
+         <p class="text-md text-gray-600">
+          Armazenado e enviado pelo
+          <span class="text-green-600 font-bold italic">
+          <i class="fas fa-bolt"></i>
+          FULL
+          </span>
+         </p>
+        </div>
+        <div class="p-1 flex items-center space-x-2">
+       <label class="text-sm text-gray-600" for="quantity">
+         Quantidade:
+       </label>
+       <select class="text-md w-auto" id="quantity">
+         <option value="1">1 unidade</option>
+         <option value="2">2 unidades</option>
+         <option value="3">3 unidades</option>
+         <option value="4">4 unidades</option>
+         <option value="5">5 unidades</option>
+      </select>
+       
+       <p class="text-sm text-gray-600 truncate" style="max-width: 200px;">
+         (+50 disponível)
+       </p>
+      </div>
+      
+      <form action="verificar_login.php" method="POST">
+         <button type="submit" class="add-to-cart bg-blue-600 text-white text-sm font-semibold py-2 rounded w-full mb-2 p-3" data-id="35" data-nome="Ovo de Páscoa Diamante Negro Lacta 300g" data-preco="39.90">
+             Comprar agora
+         </button>
+      </form>
+      <form action="verificar_login.php" method="POST">
+      <button type="submit" class="add-to-cart bg-gray-200 t-link text-sm font-semibold p-3 rounded w-full" data-id="35" data-nome="Ovo de Páscoa Diamante Negro Lacta 300g" data-preco="39.90">
+      
+         Adicionar ao carrinho
+      </button>
+      </form>
+        <div class="flex items-center mt-4 p-3">
+         <img alt="Mercado Livre logo" class="rounded-md" height="48" src="images/pqlogo.png" width="48">
+         <div class="ml-2">
+         <p class="text-xs text-gray-600">
+       Loja oficial 
+       <a href="#" style="display:inline-block;">
+         Mercado Livre 
+         <img decoding="async" src="images/cockade.svg" class="ui-pdp-icon ui-pdp-cockade-icon" alt="" style="display:inline-block; vertical-align: middle;">
+       </a>
+      </p>
+      <script>
+         $(document).ready(function() {
+             $(".add-to-cart").click(function() {
+                 var produtoId = $(this).data('id');
+                 var nome = $(this).data('nome');
+                 var preco = $(this).data('preco');
+                 var quantidade = $('#quantity').val();  // Pega o valor selecionado no <select>
+      
+                 $.ajax({
+                     url: 'carrinho.php', // O script PHP que processará a requisição
+                     type: 'POST',
+                     dataType: 'json',
+                     data: {
+                         acao: 'adicionar', // Acão que vamos realizar (adicionar produto)
+                         id: produtoId,
+                         nome: nome,
+                         preco: preco,
+                         quantidade: quantidade
+                     },
+                     success: function(response) {
+      
+                         // Aqui você pode atualizar o carrinho na interface, como a quantidade de itens ou o valor total
+                     },
+                     error: function(xhr, status, error) {
+                         console.log('Erro ao adicionar ao carrinho: ' + error);
+                     }
+                 });
+             });
+         });
+      </script>
+          <p class="text-xs font-bold text-gray-600">
+           +1 M vendas
+          </p>
+          
+         </div>
+         
+        </div>
+        <ul class="text-xs-sm mt-2 gap-5 flex flex-col">
+       <!-- Devolução grátis -->
+       <li>
+         <div class="flex items-center text-gray-400">
+           <!-- Ícone de seta dando uma volta (Font Awesome) -->
+           <i class="fas fa-undo-alt text-gray-400" style="font-size: 14px;"></i>
+           <div class="ml-2">
+             <div>
+               <a href="https://produto.mercadolivre.com.br/noindex/freeReturn/fashion?itemId=MLB3690869391&quantity=1&new_version=true&modal=false&controlled=true">
+                 Devolução grátis.
+               </a>        Você tem 30 dias a partir da data de recebimento.
+             </div>
+      
+           </div>
+         </div>
+       </li>
+      
+       <!-- Compra Garantida -->
+       <li>
+         <div class="flex items-center text-gray-400">
+           <!-- Ícone de selo com "V" para compra segura -->
+           <i class="fas fa-shield-alt text-gray-400" style="font-size: 14px;"></i>
+           <div class="ml-2">
+             <div>
+               <a target="_blank" href="https://www.mercadolivre.com.br/compra-garantida">
+                 Compra Garantida
+               </a>, receba o produto que está esperando ou devolvemos o dinheiro.
+             </div>
+           </div>
+         </div>
+           <!-- garantia -->
+           </li>
+           <li>
+         <div class="flex items-center text-gray-400">
+           <!-- Ícone de selo com "V" para compra segura -->
+           <i class="fas fa-shield-alt text-gray-400" style="font-size: 14px;"></i>
+           <div class="ml-2">
+             <div>
+             12 meses de garantia de fábrica.
+             </div>
+           </div>
+         </div>
+         </li>
+      </ul>
+      
+      
+      
+      
+      
+       </div>
+      
+      
+      
+      
+      
+       
+         </div>
+         <div class="w-full flex justify-center items-center  m-3">
+         <div class="w-full bg-white border-2 border-[#e5e5e5] rounded-xl p-3">
+        <div class="relative">
+         <img alt="Various electronic items in a yellow background" class="w-full h-32 object-cover rounded-t-lg" height="150" src="images/backml.jpg" width="400">
+         <img alt="Mercado Livre logo" width="70" class="absolute mt-5 bottom-0 left-2 rounded-sm border-2 border-white" src="images/mllogo.jpg">
+        </div>
+        <div class="p-4">
+         <h2 class="text-xl font-semibold">
+          Mercado Livre
+         </h2>
+         <p class="text-gray-500 flex items-center">
+         <img alt="Verificado" height="25" src="images/verificado.png" width="25">
+          Loja oficial do Mercado Livre
+         </p>
+         <div class="flex text-sm items-center text-gray-500 mt-2">
+          <span class="mr-4 whitespace-nowrap">
+           <strong>
+            +10mil
+           </strong>
+           Seguidores
+          </span>
+          <span class="whitespace-nowrap">
+           <strong>
+            +10mil
+           </strong>
+           Produtos
+          </span>
+         </div>
+         <div class="mt-4">
+          <p class="text-green-600 font-semibold flex items-center">
+          <img alt="Verificado" height="25" src="images/medal.svg" width="25">
+           MercadoLíder Platinum
+          </p>
+          <p class="text-sm text-gray-500 ml-6">
+           É um dos melhores do site!
+          </p>
+         </div>
+         <div style="width:120%; margin-left: -10%; margin-right: -10%;" class="flex items-center mt-4">
+       <div class="thermometer__level--1 flex-1 h-3 bg-[#f23d4f]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--2 flex-1 h-3 bg-[#f73]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--3 flex-1 h-3 bg-[#ffe600]  " style="opacity: .15; "></div>
+       <div class="thermometer__level--4 flex-1 h-3 bg-[#aadb1e] " style="opacity: .15; "></div>
+       <div class="thermometer__level--5 flex-1 h-3 bg-[#00a650] " style="opacity: 1; "></div>
+      </div>
+         <div style="width:120%; margin-left: -10%; margin-right: -10%;" class="flex items-center justify-between mt-4 text-gray-500">
+         <div class="text-center flex flex-col justify-center items-center">
+           <p class="font-semibold">
+            +1 M
+           </p>
+           <p class="text-xs">
+            Vendas concluídas
+           </p>
+          </div>
+          <div class="text-center flex flex-col justify-center items-center">
+          <img decoding="async" src="images/message-positive-v2.svg" alt="">
+           
+           <p class="text-xs">
+            Oferece um bom atendimento
+           </p>
+          </div>
+          <div class="text-center flex flex-col justify-center items-center">
+          <img decoding="async" src="images/time-positive-v2.svg" alt="">
+           
+           <p class="text-xs">
+            Entrega os produtos dentro do prazo
+           </p>
+          </div>
+         </div>
+         <button class="mt-4 w-full bg-blue-100 t-link py-2 rounded-lg font-semibold">
+          Ir para Loja Oficial
+         </button>
+        </div>
+         </div>
+         </div>
+      
+      
+      
+      
+      
+         <div class="w-full flex justify-center items-center  m-3">
+         <div class="w-full bg-white border-2 border-[#e5e5e5] rounded-xl p-3">
+         <div class="max-w-xs mx-auto p-4">
+        <p class="text-md mb-4">
+         Meios de pagamento
+         </p>
+        <button class="whitespace-nowrap text-xs-sm w-full bg-[#1da556] text-white p-2 rounded mb-4 flex items-center justify-center">
+         <i class="fas fa-credit-card mr-2">
+         </i>
+         Pague em até 18x sem juros!
+        </button>
+      
+        <div class="mb-4">
+         <h2 class="text-sm  mb-2">
+          Cartões de crédito
+         </h2>
+         <div class="flex space-x-2 mb-2">
+          <img alt="Logo of Hipercard" height="40" src="images/hp.svg" width="60">
+          <img alt="Logo of Elo" height="40" src="images/elo.svg" width="60">
+          <img alt="Logo of VISA" height="40" src="images/visa.svg" width="60">
+         </div>
+         <img alt="Logo of Mastercard" height="40" src="images/mc.svg" width="60">
+        </div>
+        <div class="mb-4">
+         <h2 class="text-sm  mb-2">
+          Cartões de débito
+         </h2>
+         <div class="flex space-x-2 mb-2">
+          <img alt="Logo of Bradesco" height="40" src="images/san.svg" width="60">
+          <img alt="Logo of CAIXA" height="40" src="images/cx.svg" width="60">
+         </div>
+        </div>
+        <div class="mb-4">
+         <h2 class="text-sm  mb-2">
+          Pix
+         </h2>
+         <img alt="Logo of Pix" height="40" src="images/pix.svg" width="60">
+        </div>
+        <div class="mb-4">
+         <h2 class="text-sm  mb-2">
+          Boleto bancário
+         </h2>
+         <img alt="Logo of Boleto" height="40" src="images/boleto.svg" width="100">
+        </div>
+        <a class="text-xs-sm" href="#">
+         Confira outros meios de pagamento
+        </a>
+       </div>
+         </div>
+         </div>
+      
+      
+      
+      
+       </div>
+      
+      <!-- Details Section -->
+      
+             <!-- Product Details -->
+      
+           </div>
+      
+         </div>
+         <div class="main-content bg-white p-3 shadow-sm">
+      <div class="w-full">
+      <hr class="m-8 border-t-2 border-[#e5e5e5]">
+             <div class="text-2xl text-[#191919] mt-12">
+             Perguntas e respostas 
+             </div>
+      
+         <div class="mx-auto p-4 text-gray-800">
+             <h1 class="text-lg font-semibold mb-4">Qual informação você precisa?</h1>
+             <div class="flex space-x-2 mb-6">
+                 <button class="bg-[#e4eefb] text-sm text-[#448af6] py-1 px-2 rounded-md">Custo e prazo de envio</button>
+                 <button class="bg-[#e4eefb] text-sm text-[#448af6] py-1 px-4 rounded-md">Devoluções grátis</button>
+                 <button class="bg-[#e4eefb] text-sm text-[#448af6] py-1 px-4 rounded-md">Meios de pagamento</button>
+                 <button class="bg-[#e4eefb] text-sm text-[#448af6] py-1 px-4 rounded-md">Garantia</button>
+             </div>
+             <h2 class="text-lg font-semibold mb-2">Busque o que você quer saber</h2>
+             <div class="flex mb-6">
+                 <input type="text" placeholder="Digite uma pergunta ou palavra-chave..." class="flex-grow border border-gray-300 rounded-l py-2 px-4">
+                 <button class="bg-blue-500 text-white py-2 px-4 rounded-r">
+                     <i class="fas fa-search"></i>
+                 </button>
+             </div>
+             <h2 class="text-lg font-semibold mb-2">Últimas perguntas feitas</h2>
+             <div class="mb-4">
+                 <p class="font-semibold">o frete gratuito para todo brasil ?</p>
+                 <p class="ml-4 text-gray-600">
+                     <span class="font-semibold">Olá EL20250125140714</span>, SIM!            </p>
+             </div>
+             <a href="#" class="t-link mb-6 block">Ver mais 1 resultado <i class="fas fa-chevron-down"></i></a>
+             <button class="bg-[#e4eefb] text-[#448af6]  py-2 px-4 rounded flex items-center">
+                 <i class="fas fa-question-circle mr-2"></i> Como pergunto ao vendedor?
+             </button>
+         </div>
+      
+             <hr class="m-8 border-t-2 border-[#e5e5e5]">
+             <div class="text-2xl text-[#191919] mt-12">
+             Opiniões do produto 
+             </div>
+             <div class="p-4">
+        <div class="flex flex-col md:flex-row">
+         <!-- Left Section -->
+         <div class="md:w-1/3 p-4">
+          <div class="text-4xl font-bold t-link flex">
+           <div class="mr-2">
+           4.8</div>
+           <div class="w-full justify-center align-center">
+            <div class="flex text-2xl t-link">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+            </div>
+         
+          <div class="text-gray-600 w-full justify-center align-center ml-auto mr-auto text-xs">
+           1,089 avaliações
+          </div>
+         </div>
+          </div>
+          <div class="mt-2">
+         <!-- 5 Estrelas -->
+         <div class="flex items-center">
+      
+           <div class=" flex-1 barra-base">
+             <div class="barra-preenchida" style="width: 87%"></div>
+           </div>
+           <div class="ml-4 text-sm text-[#949494] flex items-center">5<i class="text-[10px] ml-2 fas fa-star">
+           </i></div>
+         </div>
+      
+         <!-- 4 Estrelas -->
+         <div class="flex items-center">
+      
+           <div class=" flex-1 barra-base">
+             <div class="barra-preenchida" style="width: 10%"></div>
+           </div>
+           <div class="ml-4 text-sm text-[#949494] flex items-center">4<i class="text-[10px] ml-2 fas fa-star">
+           </i></div>
+         </div>
+      
+         <!-- 3 Estrelas -->
+         <div class="flex items-center ">
+      
+           <div class=" flex-1 barra-base">
+             <div class="barra-preenchida" style="width: 1%"></div>
+           </div>
+           <div class="ml-4 text-sm text-[#949494] flex items-center">3<i class="text-[10px] ml-2 fas fa-star">
+           </i></div>
+         </div>
+      
+         <!-- 2 Estrelas -->
+         <div class="flex items-center">
+      
+           <div class="flex-1 barra-base">
+             <div class="barra-preenchida" style="width: 1%"></div>
+           </div>
+           <div class="ml-4 text-sm text-[#949494] flex items-center">2<i class="text-[10px] ml-2 fas fa-star">
+           </i></div>
+         </div>
+      
+         <!-- 1 Estrela -->
+         <div class="flex items-center">
+      
+           <div class=" flex-1 barra-base">
+             <div class="barra-preenchida" style="width: 1%"></div>
+           </div>
+           <div class="ml-4 text-sm text-[#949494] flex items-center">1<i class="text-[10px] ml-2 fas fa-star">
+           </i></div>
+         </div>
+       </div>
+       <style>
+         .barra-base {
+           background-color: rgba(0, 0, 0, .1);
+           border-radius: 0;
+           position: relative;
+           height: 5px;
+           width: 100%;
+         }
+         .barra-preenchida {
+           background: rgba(0, 0, 0, .55);
+           border-radius: 0;
+           position: absolute;
+           top: 0;
+           bottom: 0;
+         }
+       </style>
+      <div class="mt-2">
+       <div class="mt-4 text-sm">
+         <div class="flex justify-between">
+           <div>
+             Satisfeito
+           </div>
+         </div>
+         <div class="flex t-link mt-2">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+       </div>
+      
+       <div class="mt-4 text-sm">
+         <div class="flex justify-between">
+           <div>
+             Qualidade muita boa
+           </div>
+         </div>
+         <div class="flex t-link mt-2">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+       </div>
+      
+       <div class="mt-4 text-sm">
+         <div class="flex justify-between">
+           <div>
+             Bem crocante
+           </div>
+         </div>
+         <div class="flex t-link mt-2">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+       </div>
+      
+       <div class="mt-4 text-sm">
+         <div class="flex justify-between">
+           <div>
+             Muito bem embalado e vem com lindos brindes
+           </div>
+         </div>
+         <div class="flex t-link mt-2">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+       </div>
+      
+       <div class="mt-4 text-sm">
+         <div class="flex justify-between">
+           <div>
+             Amei os brindes
+           </div>
+         </div>
+         <div class="flex t-link mt-2">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+       </div>
+      
+          </div>
+         </div>
+         <!-- Right Section -->
+         <div class="md:w-2/3 p-4">
+          <div class="font-bold text-lg">
+           Opiniões com fotos
+          </div>
+          <div class="flex space-x-4 mt-2">
+           <div class="relative">
+            <img alt="Imagem de um micro-ondas em uma cozinha" height="100" src="images/prova social laka (2).jpeg" width="115">
+            <div class="absolute bottom-0 left-0 bg-black text-white text-xs px-1">
+             5
+             <i class="fas fa-star">
+             </i>
+            </div>
+           </div>
+           <div class="relative">
+            <img alt="Imagem de um micro-ondas em uma cozinha" height="100" src="images/prova social laka (3).jpeg" width="103">
+            <div class="absolute bottom-0 left-0 bg-black text-white text-xs px-1">
+             5
+             <i class="fas fa-star">
+             </i>
+            </div>
+           </div>
+           <div class="relative">
+            <img alt="Imagem de um micro-ondas em uma cozinha" height="100" src="images/provasocial_pascoa  (4).jpeg" width="103">
+            <div class="absolute bottom-0 left-0 bg-black text-white text-xs px-1">
+             5
+             <i class="fas fa-star">
+             </i>
+            </div>
+           </div>
+           <div class="relative">
+            <img alt="Imagem de um micro-ondas em uma cozinha" height="100" src="images/provasocial_pascoa  (3).jpeg" width="110">
+            <div class="absolute bottom-0 left-0 bg-black text-white text-xs px-1">
+             5
+             <i class="fas fa-star">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="flex space-x-4 mt-4">
+           <div class="relative">
+            <select class="border border-gray-300 rounded-full px-2 py-1">
+             <option>
+              Ordenar
+             </option>
+            </select>
+           </div>
+           <div class="relative">
+            <select class="border border-gray-300 rounded-full px-2 py-1">
+             <option>
+              Qualificação
+             </option>
+            </select>
+           </div>
+          </div>
+          <div class="mt-4">
+           <div class="font-bold text-lg">
+            Opiniões em destaque
+           </div>
+           <div class="text-gray-600">
+            255 comentários
+           </div>
+           <div class="mt-2">
+            <p>
+            muito boa, comprei chegou muito rápido       </p>
+           </div>
+           <div class="mt-2 t-link">
+            <a href="#">
+             Resumo de opiniões gerado por IA
+            </a>
+           </div>
+          </div>
+          <div class="mt-4">
+       <div class="flex justify-between text-sm">
+         <!-- Estrelas à esquerda -->
+         <div class="flex t-link">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+         <!-- Data de hoje à direita -->
+         <div class="text-gray-500" id="date-1">
+           <!-- Data será inserida aqui -->
+         </div>
+       </div>
+      
+       <!-- Comentário abaixo -->
+       <div class="mt-2">
+         <p>
+           amei o produto     </p>
+       </div>
+      
+       <!-- Botão "É útil" com ícone de like e o número de 60 -->
+       <div class="mt-2 flex items-center space-x-2">
+         <button class="flex items-center border border-gray-300 rounded-full text-gray-500 py-1 px-4 text-xs transition-all hover:border-[#3571d4] hover:text-[#3571d4] hover:fill-[#3571d4]">
+           É útil <i class="ml-2 far fa-thumbs-up mr-2"></i>42
+         </button>
+       </div>
+      </div>
+      
+      <!-- Comentário abaixo -->
+      <div class="mt-4">
+       <div class="flex justify-between text-sm">
+         <!-- Estrelas à esquerda -->
+         <div class="flex t-link">
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+           <i class="fas fa-star text-[14px]"></i>
+         </div>
+         <!-- Data de 7 dias atrás à direita -->
+         <div class="text-gray-500" id="date-2">
+           <!-- Data será inserida aqui -->
+         </div>
+       </div>
+      
+       <!-- Comentário abaixo -->
+       <div class="mt-2">
+         <p>
+           comprei duas, e vou comprar outra para minha mãe amei demais     </p>
+       </div>
+      
+       <!-- Botão "É útil" com ícone de like e o número de 60 -->
+       <div class="mt-2 flex items-center space-x-2">
+         <button class="flex items-center border border-gray-300 rounded-full text-gray-500 py-1 px-4 text-xs transition-all hover:border-[#3571d4] hover:text-[#3571d4] hover:fill-[#3571d4]">
+           É útil <i class="ml-2 far fa-thumbs-up mr-2"></i>42
+         </button>
+       </div>
+      </div>
+      
+      <script>
+       // Obter a data atual e formatar para 5 dias atrás
+       const currentDate = new Date();
+       currentDate.setDate(currentDate.getDate() - 5);
+       const formattedDate1 = currentDate.toLocaleDateString('pt-BR');
+       
+       // Inserir a data formatada na primeira div
+       document.getElementById('date-1').innerHTML = formattedDate1;
+      
+       // Obter a data atual e formatar para 7 dias atrás
+       const sevenDaysAgo = new Date();
+       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+       const formattedDate2 = sevenDaysAgo.toLocaleDateString('pt-BR');
+       
+       // Inserir a data formatada na segunda div
+       document.getElementById('date-2').innerHTML = formattedDate2;
+      </script>
+      
+      </div>
+       </div>
+       
+         </div>
+        </div>
+       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+         </div>
+         </div>
+         <h2 class="mt-20 ml-5 text-xl text-black">
+      Quem viu este produto também comprou
+       </h2>
+      
+      
+      <div class="container6">
+        <button id="prev20" class="arrow7"><</button>
+      
+        <div class="list-item66" id="listar-registro20">
+           <div onclick="window.location.href='/Ovo-sonho-de-valsa/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_sonhodevalsa (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$32,49</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$9,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Sonho de Valsa 357g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/diamantenegro(1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$39,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$18,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Diamante Negro Lacta 300g</span></div></div><div onclick="window.location.href='/Ovo-ouro-branco/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ourobranco (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Ouro Branco 359g</span></div></div><div onclick="window.location.href='/Ovo-Hotwheels/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_hotweels (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$29,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,11 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Hotwheels 166g</span></div></div><div onclick="window.location.href='/ovo-de-pascoa-bis-ao-leite-318g'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_bis (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$28,49 </span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,12 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Bis Oreo Lacta </span></div></div><div onclick="window.location.href='/Ovo-barbie/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_barbie (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$19,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$38,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Barbie 166g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ao_leite (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta ao Leite 170g</span></div></div><div onclick="window.location.href='/Ovo-diamante-negro-laka/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_lakacomdiamantenegro (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$124,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$84,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Diamante Negro Laka 500g</span></div></div>   </div>
+      
+        <button id="next20" class="arrow7">></button>
+      </div>
+      
+         
+             
+      
+             <h2 class="mt-20 ml-5 text-xl text-black">
+      Quem viu este produto também comprou
+       </h2>
+      
+      <div class="container6">
+        <button id="prev30" class="arrow7"><</button>
+      
+        <div class="list-item66" id="listar-registro30">
+           <div onclick="window.location.href='/Ovo-ouro-branco/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ourobranco (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Ouro Branco 359g</span></div></div><div onclick="window.location.href='/ovo-de-pascoa-bis-ao-leite-318g'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_bis (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$28,49 </span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,12 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Bis Oreo Lacta </span></div></div><div onclick="window.location.href='/Ovo-diamante-negro-laka/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_lakacomdiamantenegro (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$124,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$84,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Diamante Negro Laka 500g</span></div></div><div onclick="window.location.href='/Ovo-Hotwheels/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_hotweels (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$29,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$0,11 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Hotwheels 166g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_ao_leite (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$33,95</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$26,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta ao Leite 170g</span></div></div><div onclick="window.location.href='/Ovo-barbie/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_barbie (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$19,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$38,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Lacta Barbie 166g</span></div></div><div onclick="window.location.href='/Ovo-sonho-de-valsa/index.html'" class="item7"><img class="lozad" width="80" src="images/ovo_de_pascoa_sonhodevalsa (1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$32,49</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$9,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Sonho de Valsa 357g</span></div></div><div onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html'" class="item7"><img class="lozad" width="80" src="images/diamantenegro(1).jpg"><hr style="color:#3c85f6;"><span class="precofim">R$39,90</span><div class="ml-4 whitespace-nowrap"><span class="text-sm">em </span><span class="text-sm text-[#1da556]"> 10x R$18,90 sem juros.</span></div><div class="ml-4 whitespace-nowrap"><span class="text-sm font-bold text-[#1da556]"> Frete Grátis</span></div><div class="text-container lozad-load"><span class="spanprod">Ovo de Páscoa Diamante Negro Lacta 300g</span></div></div>   </div>
+      
+        <button id="next30" class="arrow7">></button>
+      </div>
+      
+      <img src="images/bann.jpg" class="w-full lg:p-20">
+      
+      <div class="bg-white lg:mx-20 p-3 shadow-sm">
+         <h1 class="text-xs font-semibold mb-6">Destaques em Produtos Lacta</h1>
+         <div class="container mx-auto py-8">
+      
+             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                 <div>
+                     <h2 class="font-semibold mb-2 text-xs">Geladeira</h2>
+                     <ul class="space-y-1 text-xs">
+                         <li>Geladeira frost free</li>
+                         <li>Geladeira inox</li>
+                         <li>Geladeira consul</li>
+                         <li>Geladeira electrolux</li>
+                         <li>Geladeira preta</li>
+                         <li>Geladeira brastemp</li>
+                         <li>Geladeira freezer embaixo</li>
+                     </ul>
+                     <a href="#" class="text-blue-500 mt-2 inline-block text-xs">Ver tudo <i class="fas fa-chevron-down"></i></a>
+                 </div>
+                 <div>
+                     <h2 class="font-semibold mb-2 text-xs">Microondas</h2>
+                     <ul class="space-y-1 text-xs">
+                         <li>Microondas 20 litros</li>
+                         <li>Microondas 23 litros</li>
+                         <li>Microondas 28 litros</li>
+                         <li>Microondas 30 litros</li>
+                         <li>Microondas 34 litros</li>
+                         <li>Microondas brastemp</li>
+                         <li>Microondas eletrolux</li>
+                     </ul>
+                     <a href="#" class="text-blue-500 mt-2 inline-block text-xs">Ver tudo <i class="fas fa-chevron-down"></i></a>
+                 </div>
+                 <div>
+                     <h2 class="font-semibold mb-2 text-xs">Freezer</h2>
+                     <ul class="space-y-1 text-xs">
+                         <li>Freezer horizontal</li>
+                         <li>Freezer horizontal 1 porta</li>
+                         <li>Freezer horizontal 2 portas</li>
+                         <li>Freezer expositor</li>
+                         <li>Freezer de gaveta vertical</li>
+                         <li>Freezer vertical</li>
+                         <li>Freezer vertical expositor</li>
+                     </ul>
+                     <a href="#" class="text-blue-500 mt-2 inline-block text-xs">Ver tudo <i class="fas fa-chevron-down"></i></a>
+                 </div>
+                 <div>
+                     <h2 class="font-semibold mb-2 text-xs">Fogão</h2>
+                     <ul class="space-y-1 text-xs">
+                         <li>Cooktop</li>
+                         <li>Cooktop 2 bocas</li>
+                         <li>Cooktop 4 bocas</li>
+                         <li>Cooktop 5 bocas</li>
+                         <li>Cooktop indução 2 bocas</li>
+                         <li>Cooktop indução 4 bocas</li>
+                         <li>Cooktop indução 5 bocas</li>
+                     </ul>
+                     <a href="#" class="text-blue-500 mt-2 inline-block text-xs">Ver tudo <i class="fas fa-chevron-down"></i></a>
+                 </div>
+             </div>
+         </div>
+      </div>
+      <div class="max-w-7xl mx-auto p-4">
+             <h1 class="text-sm font-semibold mb-4 text-left">Produtos mais procurados</h1>
+             <p class="text-gray-700 text-xs mb-8">
+                 Apple Watch - Ar Condicionado - Ar Condicionado Inverter - Bicicletas - Cafeteira - Carros Novos - Carros Usados - Computador - Fogao 4 Boca - Fone De Ouvido Bluetooth - Freezer Vertical - Geladeira Frost Free - Guarda Roupa Casal - Guarda Roupa Solteiro - Ipad - Iphone - Iphone 8 Plus - Iphone 11 - Iphone 13 - Iphone 13 Pro Max - Iphone 14 Pro Max - Iphone 15 - Iphone 16 - Iphone 16 Plus - Iphone 16 Pro - Iphone 16 Pro Max - Jbl - Microondas - Monitor - Motorola - Nintendo Switch - Notebook - Notebook Dell - Painel Para Tv - Penteadeira - Poco X5 Pro - Ps4 - Ps5 - Redmi Note 12 - S22 Ultra - Samsung A54 - Samsung S23 - Smartwatch - Tablets Samsung - Tenis Masculino - Tennis Feminino - Tv 32 Polegadas - Tv 50 4k - Tv 50 Polegadas - Ventilador - Xbox - Xbox Series X - Xdj - Xiaomi
+             </p>
+             <h2 class="text-sm font-medium mt-8 mb-4 text-center">Pesquise produto por letra inicial</h2>
+             <div class="flex flex-wrap justify-center text-sm text-gray-500">
+                 <span class="mr-2 mb-2">A</span>
+                 <span class="mr-2 mb-2">B</span>
+                 <span class="mr-2 mb-2">C</span>
+                 <span class="mr-2 mb-2">D</span>
+                 <span class="mr-2 mb-2">E</span>
+                 <span class="mr-2 mb-2">F</span>
+                 <span class="mr-2 mb-2">G</span>
+                 <span class="mr-2 mb-2">H</span>
+                 <span class="mr-2 mb-2">I</span>
+                 <span class="mr-2 mb-2">J</span>
+                 <span class="mr-2 mb-2">K</span>
+                 <span class="mr-2 mb-2">L</span>
+                 <span class="mr-2 mb-2">M</span>
+                 <span class="mr-2 mb-2">N</span>
+                 <span class="mr-2 mb-2">O</span>
+                 <span class="mr-2 mb-2">P</span>
+                 <span class="mr-2 mb-2">Q</span>
+                 <span class="mr-2 mb-2">R</span>
+                 <span class="mr-2 mb-2">S</span>
+                 <span class="mr-2 mb-2">T</span>
+                 <span class="mr-2 mb-2">U</span>
+                 <span class="mr-2 mb-2">V</span>
+                 <span class="mr-2 mb-2">W</span>
+                 <span class="mr-2 mb-2">X</span>
+                 <span class="mr-2 mb-2">Y</span>
+                 <span class="mr-2 mb-2">Z</span>
+             </div>
+         </div>
+             
+      
+      
+      
+       
+       
+      
+      
+      
+      
+      
+      
+      
+      <!--bancodedados -->
+      
+      
+      <script> $('#next3').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro2').scrollLeft();
+         var maxScroll = $('#listar-registro2')[0].scrollWidth - $('#listar-registro2').outerWidth();
+         var visibleWidth = $('#listar-registro2').outerWidth();
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         // Verifica se está a menos de (itemWidth * 3) do final
+      
+             // Caso contrário, avançar a largura de 8 itens
+             $('#listar-registro2').animate({
+                 scrollLeft: "+=" + (visibleWidth - (itemWidth * 2)) // Avançar a largura de 8 itens
+             }, "fast");
+         
+      });
+      
+      
+      $('#prev3').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro2').scrollLeft();
+         var visibleWidth = $('#listar-registro2').outerWidth() * 2;
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         if (scrollLeft <= 0) {
+             // Se chegou ao início, ir para o final
+             var maxScroll = $('#listar-registro2')[0].scrollWidth - $('#listar-registro2').outerWidth();
+             $('#listar-registro2').animate({
+                 scrollLeft: maxScroll
+             }, "slow");
+         } else {
+             // Caso contrário, retroceder o suficiente para mostrar 8 itens
+             $('#listar-registro2').animate({
+                 scrollLeft: "-=" + (visibleWidth  * 0.25) // Retroceder a largura de 8 itens
+             }, "slow");
+         }
+      });
+      </script>
+      <script> $('#next10').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro10').scrollLeft();
+         var maxScroll = $('#listar-registro10')[0].scrollWidth - $('#listar-registro10').outerWidth();
+         var visibleWidth = $('#listar-registro10').outerWidth();
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         // Verifica se está a menos de (itemWidth * 3) do final
+      
+             // Caso contrário, avançar a largura de 8 itens
+             $('#listar-registro10').animate({
+                 scrollLeft: "+=" + (visibleWidth - (itemWidth * 2)) // Avançar a largura de 8 itens
+             }, "fast");
+         
+      });
+      
+      
+      $('#prev10').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro10').scrollLeft();
+         var visibleWidth = $('#listar-registro10').outerWidth() * 2;
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         if (scrollLeft <= 0) {
+             // Se chegou ao início, ir para o final
+             var maxScroll = $('#listar-registro10')[0].scrollWidth - $('#listar-registro10').outerWidth();
+             $('#listar-registro10').animate({
+                 scrollLeft: maxScroll
+             }, "slow");
+         } else {
+             // Caso contrário, retroceder o suficiente para mostrar 8 itens
+             $('#listar-registro10').animate({
+                 scrollLeft: "-=" + (visibleWidth  * 0.25) // Retroceder a largura de 8 itens
+             }, "slow");
+         }
+      });
+      </script>
+      <script> $('#next20').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro20').scrollLeft();
+         var maxScroll = $('#listar-registro20')[0].scrollWidth - $('#listar-registro20').outerWidth();
+         var visibleWidth = $('#listar-registro20').outerWidth();
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         // Verifica se está a menos de (itemWidth * 3) do final
+      
+             // Caso contrário, avançar a largura de 8 itens
+             $('#listar-registro20').animate({
+                 scrollLeft: "+=" + (visibleWidth - (itemWidth * 2)) // Avançar a largura de 8 itens
+             }, "fast");
+         
+      });
+      
+      
+      $('#prev20').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro20').scrollLeft();
+         var visibleWidth = $('#listar-registro20').outerWidth() * 2;
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         if (scrollLeft <= 0) {
+             // Se chegou ao início, ir para o final
+             var maxScroll = $('#listar-registro20')[0].scrollWidth - $('#listar-registro20').outerWidth();
+             $('#listar-registro20').animate({
+                 scrollLeft: maxScroll
+             }, "slow");
+         } else {
+             // Caso contrário, retroceder o suficiente para mostrar 8 itens
+             $('#listar-registro20').animate({
+                 scrollLeft: "-=" + (visibleWidth  * 0.25) // Retroceder a largura de 8 itens
+             }, "slow");
+         }
+      });
+      </script>
+      <script> $('#next30').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro30').scrollLeft();
+         var maxScroll = $('#listar-registro30')[0].scrollWidth - $('#listar-registro30').outerWidth();
+         var visibleWidth = $('#listar-registro30').outerWidth();
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         // Verifica se está a menos de (itemWidth * 3) do final
+      
+             // Caso contrário, avançar a largura de 8 itens
+             $('#listar-registro30').animate({
+                 scrollLeft: "+=" + (visibleWidth - (itemWidth * 2)) // Avançar a largura de 8 itens
+             }, "fast");
+         
+      });
+      
+      
+      $('#prev30').click(function(event) {
+         event.preventDefault();
+         var scrollLeft = $('#listar-registro30').scrollLeft();
+         var visibleWidth = $('#listar-registro30').outerWidth() * 2;
+         var itemWidth = $('.item7').outerWidth(true);
+      
+         if (scrollLeft <= 0) {
+             // Se chegou ao início, ir para o final
+             var maxScroll = $('#listar-registro30')[0].scrollWidth - $('#listar-registro30').outerWidth();
+             $('#listar-registro30').animate({
+                 scrollLeft: maxScroll
+             }, "slow");
+         } else {
+             // Caso contrário, retroceder o suficiente para mostrar 8 itens
+             $('#listar-registro30').animate({
+                 scrollLeft: "-=" + (visibleWidth  * 0.25) // Retroceder a largura de 8 itens
+             }, "slow");
+         }
+      });
+      </script>
+      
+         <div class="bg-gray-200 py-4 some">
+         <div class="text-center mb-4">
+             <button class="text-gray-600 text-xs">Mais informações <i class="fas fa-chevron-down"></i></button>
+         </div>
+         <div class="container mx-auto px-4">
+             <div class="grid grid-cols-7 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7 gap-4 text-gray-600 text-xs text-center">
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Sobre o</h3>
+                     <ul class="text-xs">
+                         <li>Mercado Livre</li>
+                         <li>Investor relations</li>
+                         <li>Tendências</li>
+                         <li>Sustentabilidade</li>
+                         <li>Blog</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Outros sites</h3>
+                     <ul class="text-xs">
+                         <li>Desenvolvedores</li>
+                         <li>Mercado Pago</li>
+                         <li>Envios</li>
+                         <li>Mercado Shops</li>
+                         <li>Mercado Ads</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Contato</h3>
+                     <ul class="text-xs">
+                         <li>Comprar</li>
+                         <li>Vender</li>
+                         <li>Solução de problemas</li>
+                         <li>Segurança</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Redes sociais</h3>
+                     <ul class="text-xs">
+                         <li>X</li>
+                         <li>Facebook</li>
+                         <li>Instagram</li>
+                         <li>YouTube</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Minha conta</h3>
+                     <ul class="text-xs">
+                         <li>Entre</li>
+                         <li>Vender</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Assinaturas</h3>
+                     <ul class="text-xs">
+                         <li>Meli+</li>
+                         <li>Disney+</li>
+                         <li>Deezer Premium</li>
+                         <li>Max</li>
+                         <li>Paramount+</li>
+                         <li>Universal+</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <h3 class="font-bold mb-2 text-xs">Temporadas</h3>
+                     <ul class="text-xs">
+                         <li>Dia do consumidor</li>
+                         <li>Dia das mães</li>
+                         <li>Black Friday</li>
+                         <li>Descontaco</li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+      </div>
+      <div class="bg-gray-100 py-2 some">
+         <div class="container mx-auto px-4 text-center text-gray-600 text-xs">
+             <ul class="flex flex-wrap justify-center space-x-4">
+                 <li class="text-xs">Trabalhe conosco</li>
+                 <li class="text-xs">Termos e condições</li>
+                 <li class="text-xs">Promoções</li>
+                 <li class="text-xs">Como cuidamos da sua privacidade</li>
+                 <li class="text-xs">Acessibilidade</li>
+                 <li class="text-xs">Contato</li>
+                 <li class="text-xs">Informações sobre seguros</li>
+                 <li class="text-xs">Programa de Afiliados</li>
+                 <li class="text-xs">Lista de presentes</li>
+             </ul>
+         </div>
+      </div>
+      
+      
+      
+      <div class="bg-white text-gray-800 aparece text-center align-center justify-center">
+         <!-- Antes do hr, duas colunas -->
+         <div class="container w-full mx-auto px-4 py-8  text-left align-center justify-center">
+             <div class="grid grid-cols-2 text-sm gap-x-20 gap-4 text-left">
+                 <div>Minha conta</div>
+                 <div>Compras</div>
+                 <div>Histórico</div>
+                 <div>Ofertas</div>
+                 <div>Favoritos</div>
+                 <div>Lojas oficiais</div>
+                 <div>Categorias</div>
+                 <div>Meli+</div>
+                 <div>Contato</div>
+                 <div>Vender</div>
+                 <div>Programa de Afiliados</div>
+                 <div>Lista de presentes</div>
+             </div>
+         </div>
+      
+         <!-- hr (linha horizontal) -->
+         <div class="border-t mt-8 pt-4"></div>
+      
+         <!-- Depois do hr, alinhado à esquerda -->
+         <div class="mb-12 mx-auto px-4 text-left text-sm text-gray-600">
+         <!-- Div 1: Termos e condições e outros links -->
+         <div class="mb-4">
+             Termos e condições Promoções Como cuidamos da sua privacidade 
+             <i class="fas fa-universal-access"></i> 
+             Acessibilidade Informações sobre seguros Blog Afiliados Tendências
+         </div>
+         
+         <!-- Div 2: Direitos autorais -->
+         <div class="mb-4">
+             © 1999-2025 Ebazar.com.br LTDA.
+         </div>
+         
+         <!-- Div 3: Informações de CNPJ e endereço -->
+         <div>
+             CNPJ n.º 03.007.331/0001-41 / Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903 - empresa do grupo Mercado Livre.
+         </div>
+      </div>
+      </div>
+      
+      </body></html>
+
+      
