@@ -1,0 +1,458 @@
+<html lang="pt-br"><head>
+
+  <meta charset="UTF-8">
+
+  <script type="text/javascript">
+    window.hasMobileFirstExtension = true;
+  </script>
+
+  <!-- Meta Pixel Code -->
+<!-- End Meta Pixel Code -->
+  
+  <script>
+    // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+    const link = '';
+
+    function setBackRedirect(url) {
+      let urlBackRedirect = url;
+      urlBackRedirect = urlBackRedirect =
+        urlBackRedirect.trim() +
+        (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+        document.location.search.replace('?', '').toString();
+
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+
+      window.addEventListener('popstate', () => {
+        console.log('onpopstate', urlBackRedirect);
+        setTimeout(() => {
+          location.href = urlBackRedirect;
+        }, 1);
+      });
+    }
+
+    setBackRedirect(link);
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Mercado Livre</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+  <style>
+    .free-shipping-container {
+      margin-bottom: 6px;
+    }
+
+    .estoque {
+      font-size: 10pt;
+      padding: 3px;
+    }
+
+    .estoque-verde {
+      color: rgb(0, 132, 18);
+      background-color: #CBFFC7;
+    }
+
+    .estoque-amarelo {
+      color: rgb(132, 121, 0);
+      background-color: #ffffc7;
+    }
+
+    .estoque-vermelho {
+      color: rgb(255, 46, 46);
+      background-color: #FFDCDC;
+    }
+
+    .product-name {
+      margin-top: 5px;
+    }
+  </style>
+  <meta charset="utf-8">
+
+  <style id="NotiflixInternalCSS">[id^=NotiflixNotifyWrap]{pointer-events:none;position:fixed;z-index:4001;opacity:1;right:10px;top:10px;width:280px;max-width:96%;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent}[id^=NotiflixNotifyWrap].nx-flex-center-center{max-height:calc(100vh - 20px);overflow-x:hidden;overflow-y:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:auto}[id^=NotiflixNotifyWrap]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixNotifyWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyOverlay]{-webkit-transition:background .3s ease-in-out;-o-transition:background .3s ease-in-out;transition:background .3s ease-in-out}[id^=NotiflixNotifyWrap]>div{pointer-events:all;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;width:100%;display:inline-block;position:relative;margin:0 0 10px;border-radius:5px;background:#1e1e1e;color:#fff;padding:10px 12px;font-size:14px;line-height:1.4}[id^=NotiflixNotifyWrap]>div:last-child{margin:0}[id^=NotiflixNotifyWrap]>div.with-callback{cursor:pointer}[id^=NotiflixNotifyWrap]>div.with-icon{padding:8px}[id^=NotiflixNotifyWrap]>div.click-to-close{cursor:pointer}[id^=NotiflixNotifyWrap]>div.with-close-button{padding:10px 30px 10px 12px}[id^=NotiflixNotifyWrap]>div.with-icon.with-close-button{padding:6px 30px 6px 6px}[id^=NotiflixNotifyWrap]>div>span.the-message{font-weight:normal;font-family:inherit!important;word-break:break-all;word-break:break-word}[id^=NotiflixNotifyWrap]>div>span.notify-close-button{cursor:pointer;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;position:absolute;right:8px;top:0;bottom:0;margin:auto;color:inherit;width:16px;height:16px}[id^=NotiflixNotifyWrap]>div>span.notify-close-button:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}[id^=NotiflixNotifyWrap]>div>span.notify-close-button>svg{position:absolute;width:16px;height:16px;right:0;top:0}[id^=NotiflixNotifyWrap]>div>.nmi{position:absolute;width:40px;height:40px;font-size:30px;line-height:40px;text-align:center;left:8px;top:0;bottom:0;margin:auto;border-radius:inherit}[id^=NotiflixNotifyWrap]>div>.wfa.shadow{color:inherit;background:rgba(0,0,0,.15);box-shadow:inset 0 0 34px rgba(0,0,0,.2);text-shadow:0 0 10px rgba(0,0,0,.3)}[id^=NotiflixNotifyWrap]>div>span.with-icon{position:relative;float:left;width:calc(100% - 40px);margin:0 0 0 40px;padding:0 0 0 10px;-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyWrap]>div.rtl-on>.nmi{left:auto;right:8px}[id^=NotiflixNotifyWrap]>div.rtl-on>span.with-icon{padding:0 10px 0 0;margin:0 40px 0 0}[id^=NotiflixNotifyWrap]>div.rtl-on>span.notify-close-button{right:auto;left:8px}[id^=NotiflixNotifyWrap]>div.with-icon.with-close-button.rtl-on{padding:6px 6px 6px 30px}[id^=NotiflixNotifyWrap]>div.with-close-button.rtl-on{padding:10px 12px 10px 30px}[id^=NotiflixNotifyOverlay].with-animation,[id^=NotiflixNotifyWrap]>div.with-animation.nx-fade{-webkit-animation:notify-animation-fade .3s ease-in-out 0s normal;animation:notify-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-zoom{-webkit-animation:notify-animation-zoom .3s ease-in-out 0s normal;animation:notify-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-right{-webkit-animation:notify-animation-from-right .3s ease-in-out 0s normal;animation:notify-animation-from-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}@keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-left{-webkit-animation:notify-animation-from-left .3s ease-in-out 0s normal;animation:notify-animation-from-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}@keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-top{-webkit-animation:notify-animation-from-top .3s ease-in-out 0s normal;animation:notify-animation-from-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}@keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-bottom{-webkit-animation:notify-animation-from-bottom .3s ease-in-out 0s normal;animation:notify-animation-from-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}@keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}[id^=NotiflixNotifyOverlay].with-animation.remove,[id^=NotiflixNotifyWrap]>div.with-animation.nx-fade.remove{opacity:0;-webkit-animation:notify-remove-fade .3s ease-in-out 0s normal;animation:notify-remove-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}@keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-zoom.remove{-webkit-transform:scale(0);transform:scale(0);-webkit-animation:notify-remove-zoom .3s ease-in-out 0s normal;animation:notify-remove-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}@keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-top.remove{opacity:0;-webkit-animation:notify-remove-to-top .3s ease-in-out 0s normal;animation:notify-remove-to-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}@keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-right.remove{opacity:0;-webkit-animation:notify-remove-to-right .3s ease-in-out 0s normal;animation:notify-remove-to-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}@keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-bottom.remove{opacity:0;-webkit-animation:notify-remove-to-bottom .3s ease-in-out 0s normal;animation:notify-remove-to-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}@keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.with-animation.nx-from-left.remove{opacity:0;-webkit-animation:notify-remove-to-left .3s ease-in-out 0s normal;animation:notify-remove-to-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}@keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}[id^=NotiflixReportWrap]{position:fixed;z-index:4002;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;left:0;top:0;padding:10px;color:#1e1e1e;border-radius:25px;background:transparent;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixReportWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixReportWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixReportWrap]>div[class*="-content"]{width:320px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:inherit;padding:10px;-webkit-filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));border:1px solid rgba(0,0,0,.03);background:#f8f8f8;position:relative;z-index:1}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:110px;height:110px;display:block;margin:6px auto 12px}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"] svg{min-width:100%;max-width:100%;height:auto}[id^=NotiflixReportWrap]>*>h5{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:16px;font-weight:500;line-height:1.4;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);float:left;width:100%;text-align:center}[id^=NotiflixReportWrap]>*>p{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:13px;line-height:1.4;font-weight:normal;float:left;width:100%;padding:0 10px;margin:0 0 10px}[id^=NotiflixReportWrap] a#NXReportButton{word-break:break-all;word-break:break-word;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;cursor:pointer;float:right;padding:7px 17px;background:#32c682;font-size:14px;line-height:1.4;font-weight:500;border-radius:inherit!important;color:#fff}[id^=NotiflixReportWrap] a#NXReportButton:hover{box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixReportWrap].rtl-on a#NXReportButton{float:left}[id^=NotiflixReportWrap]>div[class*="-overlay"].with-animation{-webkit-animation:report-overlay-animation .3s ease-in-out 0s normal;animation:report-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].with-animation.nx-fade{-webkit-animation:report-animation-fade .3s ease-in-out 0s normal;animation:report-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].with-animation.nx-zoom{-webkit-animation:report-animation-zoom .3s ease-in-out 0s normal;animation:report-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixReportWrap].remove>div[class*="-overlay"].with-animation{opacity:0;-webkit-animation:report-overlay-animation-remove .3s ease-in-out 0s normal;animation:report-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].remove>div[class*="-content"].with-animation.nx-fade{opacity:0;-webkit-animation:report-animation-fade-remove .3s ease-in-out 0s normal;animation:report-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].remove>div[class*="-content"].with-animation.nx-zoom{opacity:0;-webkit-animation:report-animation-zoom-remove .3s ease-in-out 0s normal;animation:report-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixConfirmWrap]{position:fixed;z-index:4003;width:100%;height:100%;left:0;top:0;padding:10px;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixConfirmWrap].nx-position-center-top{-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-center-bottom{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-left-top{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-center{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-bottom{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-top{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-right-center{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-bottom{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixConfirmWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixConfirmWrap]>div[class*="-overlay"].with-animation{-webkit-animation:confirm-overlay-animation .3s ease-in-out 0s normal;animation:confirm-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].remove>div[class*="-overlay"].with-animation{opacity:0;-webkit-animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal;animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap]>div[class*="-content"]{width:300px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:25px;padding:10px;margin:0;-webkit-filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));background:#f8f8f8;color:#1e1e1e;position:relative;z-index:1;text-align:center}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]{float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>h5{float:left;width:100%;margin:0;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);color:#32c682;font-family:inherit!important;font-size:16px;line-height:1.4;font-weight:500;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div{font-family:inherit!important;margin:15px 0 20px;padding:0 10px;float:left;width:100%;font-size:14px;line-height:1.4;font-weight:normal;color:inherit;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div{font-family:inherit!important;float:left;width:100%;margin:15px 0 0;padding:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input{font-family:inherit!important;float:left;width:100%;height:40px;margin:0;padding:0 15px;border:1px solid rgba(0,0,0,.1);border-radius:25px;font-size:14px;font-weight:normal;line-height:1;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;text-align:left}[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-head"]>div>div>input{text-align:right}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:hover{border-color:rgba(0,0,0,.1)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:focus{border-color:rgba(0,0,0,.3)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-failure{border-color:#ff5549}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-success{border-color:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-radius:inherit;float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a{cursor:pointer;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;float:left;width:48%;padding:9px 5px;border-radius:inherit!important;font-weight:500;font-size:15px;line-height:1.4;color:#f8f8f8;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.confirm-button-ok{margin:0 2% 0 0;background:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.confirm-button-cancel{margin:0 0 0 2%;background:#a9a9a9}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.full{margin:0;width:100%}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a:hover{box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-buttons"],[id^=NotiflixConfirmWrap].rtl-on>div[class*="-content"]>div[class*="-buttons"]>a{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}[id^=NotiflixConfirmWrap].with-animation.nx-fade>div[class*="-content"]{-webkit-animation:confirm-animation-fade .3s ease-in-out 0s normal;animation:confirm-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].with-animation.nx-zoom>div[class*="-content"]{-webkit-animation:confirm-animation-zoom .3s ease-in-out 0s normal;animation:confirm-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixConfirmWrap].with-animation.nx-fade.remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-fade-remove .3s ease-in-out 0s normal;animation:confirm-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap].with-animation.nx-zoom.remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal;animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixLoadingWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:fixed;z-index:4000;width:100%;height:100%;left:0;top:0;right:0;bottom:0;margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;background:rgba(0,0,0,.8);font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}[id^=NotiflixLoadingWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixLoadingWrap].click-to-close{cursor:pointer}[id^=NotiflixLoadingWrap]>div[class*="-icon"]{width:60px;height:60px;position:relative;-webkit-transition:top .2s ease-in-out;-o-transition:top .2s ease-in-out;transition:top .2s ease-in-out;margin:0 auto}[id^=NotiflixLoadingWrap]>div[class*="-icon"] img,[id^=NotiflixLoadingWrap]>div[class*="-icon"] svg{max-width:unset;max-height:unset;width:100%;height:100%;position:absolute;left:0;top:0}[id^=NotiflixLoadingWrap]>p{position:relative;margin:10px auto 0;font-family:inherit!important;font-weight:normal;font-size:15px;line-height:1.4;padding:0 10px;width:100%;text-align:center}[id^=NotiflixLoadingWrap].with-animation{-webkit-animation:loading-animation-fade .3s ease-in-out 0s normal;animation:loading-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixLoadingWrap].with-animation.remove{opacity:0;-webkit-animation:loading-animation-fade-remove .3s ease-in-out 0s normal;animation:loading-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixLoadingWrap]>p.new{-webkit-animation:loading-new-message-fade .3s ease-in-out 0s normal;animation:loading-new-message-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixBlockWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;z-index:1000;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:rgba(255,255,255,.9);text-align:center;animation-duration:.4s;width:100%;height:100%;left:0;top:0;border-radius:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixBlockWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixBlockWrap]>span[class*="-icon"]{display:block;width:45px;height:45px;position:relative;margin:0 auto}[id^=NotiflixBlockWrap]>span[class*="-icon"] svg{width:inherit;height:inherit}[id^=NotiflixBlockWrap]>span[class*="-message"]{position:relative;display:block;width:100%;margin:10px auto 0;padding:0 10px;font-family:inherit!important;font-weight:normal;font-size:14px;line-height:1.4}[id^=NotiflixBlockWrap].with-animation{-webkit-animation:block-animation-fade .3s ease-in-out 0s normal;animation:block-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixBlockWrap].with-animation.remove{opacity:0;-webkit-animation:block-animation-fade-remove .3s ease-in-out 0s normal;animation:block-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}</style>
+
+</head>
+
+<body>
+  <div style="background-color: #e6cf00; text-align: center; padding: 5px; font-family: 'GellixMedium'; font-size: 13px; color: white">
+    Promoção exclusiva: Páscoa Mercado Livre</div>
+  <nav class="navbar" style="padding-top: 15px;">
+    <div class="menu-icon" style="padding-left: 3%;">
+      <img src="images/logo11.png" style="height: 5vh;" alt="Logo Central Vivara">
+    </div>
+    <div class="logo-central"></div>
+    <div class="menu-icon" style="padding-right: 3%;">
+      <span class="material-symbols-outlined" style="font-size: 30px; padding-right: 10px; color: black">menu</span>
+    </div>
+  </nav>
+  <img src="images/bannerpascoaml.png" style="width: 100%; margin-top: -2px;">
+  
+   <!-- BANNER GRADIENTE -->
+  <div style="
+    width: 88%;
+    margin: 10px auto;
+    border-radius: 8px;
+    background: linear-gradient(to right, #011E51, #a52aad);
+    padding: 20px;
+    color: #fff;
+    font-family: 'GellixMedium';
+    text-align: center;
+">
+  Oferta Disponível
+  <span style="font-size: 12px;">
+    Tempo restante: <span id="countdown">01:17:38</span>
+  </span>
+</div>  
+<script>
+  const countdown = document.getElementById("countdown");
+  let [h, m, s] = countdown.textContent.split(":").map(Number);
+  const timer = setInterval(() => {
+    if (--s < 0) s = 59, m--;
+    if (m < 0) m = 59, h--;
+    if (h < 0) clearInterval(timer), countdown.textContent = "Oferta Expirada";
+    countdown.textContent = `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  }, 1000);
+</script>
+
+  <div class="bracelet-grid">
+    <div class="bracelet-item" onclick="window.location.href = 'https://mercadoslivre.site/' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Boombox 3'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/lacta%20diamante%20negro.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 138,90</div>
+        <span class="new-price">R$ 69,45</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-verde">Restam 19 unidades</span>
+        <p class="product-name">Ovo De Páscoa Diamante Negro Lacta <span style="font-family: 'GellixBold';">300g</span>
+        </p>
+        <p></p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-ouro-branco/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/ouro%20branco.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 67,90</div>
+        <span class="new-price">R$ 33,95</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-amarelo">Restam 10 unidades</span>
+        <p class="product-name">Ovo de Páscoa Lacta Ouro Branco <span style="font-family: 'GellixBold';">359g</span>
+        </p>
+        <p></p>
+
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/ovo-de-pascoa-bis-ao-leite-318g/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Partybox 710'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/bis%20oreo.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 56,99</div>
+        <span class="new-price">R$ 28,49</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-verde">Restam 11 unidades</span>
+        <p class="product-name">Ovo de Páscoa Bis Oreo Lacta <span style="font-family: 'GellixBold';">240g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-sonho-de-valsa/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Flip 6'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/sonho%20de%20valsa%20lacta.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 64,99</div>
+        <span class="new-price">R$ 32,49</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-verde">Restam 14 unidades</span>
+        <p class="product-name">Ovo de Páscoa Sonho de Valsa ao Leite com Recheio na Casca - Lacta <span style="font-family: 'GellixBold';">357g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Apple Watch Series 9'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/shot.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 37,79</div>
+        <span class="new-price">R$ 18,89</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Esgotado</span>
+        <p class="product-name">Ovo de Páscoa Lacta Shot <span style="font-family: 'GellixBold';">236g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-diamante-negro-laka/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/diamante%20negro%20e%20chocolate%20branco.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 249,90</div>
+        <span class="new-price">R$ 124,95</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Restam 7 unidades</span>
+        <p class="product-name">Ovo de Páscoa Lacta Laka e Diamante Negro <span style="font-family: 'GellixBold';">500g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-chocolate-ao-leite/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/lacta%20chocolate%20ao%20leite.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 46,99</div>
+        <span class="new-price">R$ 23,49</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Restam 6 unidades</span>
+        <p class="product-name">Ovo de Páscoa Lacta ao Leite <span style="font-family: 'GellixBold';">170g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-Hotwheels/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro Max'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/hot%20wheels.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 79,99</div>
+        <span class="new-price">R$ 39,99</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Restam 8 unidades</span>
+        <p class="product-name">Ovo de Páscoa Lacta Hot Wheels <span style="font-family: 'GellixBold';">166g</span>
+        </p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='/Ovo-barbie/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/lacta%20barbie%20dan%C3%A7arina.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 78,38</div>
+        <span class="new-price">R$ 39,19</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+        <p class="product-name">Ovo de Páscoa Barbie Bailarina <span style="font-family: 'GellixBold';">166g</span>
+        </p>
+        <p></p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/lacta%20batman.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 186,51</div>
+        <span class="new-price">R$ 93,25</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Esgotado</span>
+        <p class="product-name">Ovo de Páscoa Lacta Batman <span style="font-family: 'GellixBold';">166g</span>
+        </p>
+        <p></p>
+      </div>
+    </div>
+    <div class="bracelet-item" onclick="window.location.href='' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/TPS2B2N0/ovo3.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DE PÁSCOA</div>
+          <div class="old-price">R$ 184,00</div>
+          <span class="new-price">R$ 92,90</span>
+          <span class="discount">50% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Esgotado</span>
+          <p class="product-name">Kit 3 Ovos de Páscoa </p>
+          <p></p>
+<p></p>
+            <p></p>
+</div>
+      </div>
+    <div class="bracelet-item" onclick="window.location.href='' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+      <div class="product-image" style="margin-bottom: 10px;">
+        <img src="images/lacta%20barbie.jpeg" style="height: 140px; width: auto;">
+      </div>
+      <div class="product-info">
+        <div class="offer-tag">OFERTA DO DIA</div>
+        <div class="old-price">R$ 280,63</div>
+        <span class="new-price">R$ 140,31</span>
+        <span class="discount">50% OFF</span>
+        <div class="free-shipping-container">
+          <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+            <span style="font-family: 'GellixSemiBold';">FULL</span>
+          </span>
+        </div>
+        <span class="estoque estoque-vermelho">Esgotado</span>
+        <p class="product-name">Kit Com 2 Ovo De Páscoa Lacta Hotwheels E Barbie <span style="font-family: 'GellixBold';">166g Cada</span>
+        </p>
+        <p>
+
+
+
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="divisoria2"></div>
+  <p style="margin-left: 3%; margin-right: 3%; font-family: 'GellixRegular'; font-size: 14px; padding-top: 5px;">
+    <span style="font-family: 'GellixSemiBold';">Termos e condições. Como cuidamos da sua privacidade. Acessibilidade
+      Informações sobre seguros Blog Afiliados Tendências</span>
+    <br>
+    <br>© 1999-2024 Ebazar.com.br LTDA. CNPJ n.º 03.007.331/0001-41 / Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP
+    - CEP 06233-903 - empresa do grupo Mercado Livre. <span style="font-family: 'GellixSemiBold';">
+      <br>
+      <br>Brasil/Português </span>
+  </p>
+  
+  <script src="js/notiflix-aio-2.6.0.min.js"></script>
+<script> /right-top, right-bottom, left-top, left-bottom, center-top, center-bottom, center-center/
+        var position = "left-bottom";
+ 
+        /verde, azul, vermelho, amarelo/
+        var color = "verde";
+ 
+        /fade, zoom, from-right, from-left, from-top, from-bottom/
+        var animation = "from-left";
+ 
+        /nome do produto/
+        var product_name = "";
+ 
+        /frase depois do nome da pessoa/
+        var phrase = "acabou de comprar com 50% de desconto";
+        var timeout = 5000;
+ 
+        /masc, fem, any/
+        var type_name = "masc, fem";
+        var msg_final = "";
+ 
+        var min_time = 5;
+        var max_time = 10;
+ 
+        var names_masc = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Valdir', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido'];
+        var names_fem = ['Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Larissa', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
+ 
+        var option = {
+            position: position,
+            cssAnimationStyle: animation,
+            plainText: false,
+            timeout: timeout
+        };
+ 
+        function show_notification() {
+            if (type_name == "masc") {
+                msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+            } else if (type_name == "fem") {
+                msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+            } else {
+                var array_aux = ["masc", "fem"];
+ 
+                if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+                    msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+                } else {
+                    msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+                }
+            }
+ 
+            msg_final += decodeURIComponent(escape(" " + phrase + " " + product_name));
+ 
+            if (color == "verde") {
+                Notiflix.Notify.Success(msg_final, option);
+            }
+ 
+            if (color == "azul") {
+                Notiflix.Notify.Info(msg_final, option);
+            }
+ 
+            if (color == "vermelho") {
+                Notiflix.Notify.Failure(msg_final, option);
+            }
+ 
+            if (color == "amarelo") {
+                Notiflix.Notify.Success(msg_final, option);
+            }
+ 
+            var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+            setTimeout(show_notification, rand * 1000);
+        }
+            setTimeout(show_notification, 7 * 1000);
+</script>
+<div id="kins-kins-popup" style="color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: initial; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; direction: ltr; font-family: Rubik, sans-serif; font-feature-settings: initial; font-kerning: initial; font-optical-sizing: initial; font-palette: initial; font-size: medium; font-size-adjust: initial; font-stretch: initial; font-style: initial; font-synthesis: initial; font-variant: initial; font-variation-settings: initial; font-weight: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: none; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: none; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: border-box; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: block; dominant-baseline: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: auto; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interpolate-size: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; line-height: normal; list-style: initial; margin-block: initial; margin: 0px; margin-inline: initial; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-block: initial; overflow-clip-margin: initial; overflow-inline: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: none; overscroll-behavior-inline: none; overscroll-behavior: none; padding-block: initial; padding: 0px; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position-try: initial; position-visibility: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-marker-group: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: left; text-align-last: initial; text-anchor: initial; text-box: initial; text-combine-upright: initial; text-decoration: none; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: wrap; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: collapse; widows: initial; width: auto; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: initial;"><style>
+                    #kins_root {
+                        display: block !important;
+                    }
+                </style>
+  <div id="kins_root" style="color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: initial; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; direction: ltr; font-family: Rubik, sans-serif; font-feature-settings: initial; font-kerning: initial; font-optical-sizing: initial; font-palette: initial; font-size: medium; font-size-adjust: initial; font-stretch: initial; font-style: initial; font-synthesis: initial; font-variant: initial; font-variation-settings: initial; font-weight: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: none; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: none; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: border-box; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: block; dominant-baseline: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: auto; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interpolate-size: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; line-height: normal; list-style: initial; margin-block: initial; margin: 0px; margin-inline: initial; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-block: initial; overflow-clip-margin: initial; overflow-inline: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: none; overscroll-behavior-inline: none; overscroll-behavior: none; padding-block: initial; padding: 0px; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position-try: initial; position-visibility: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-marker-group: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: left; text-align-last: initial; text-anchor: initial; text-box: initial; text-combine-upright: initial; text-decoration: none; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: wrap; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: collapse; widows: initial; width: auto; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: initial;"></div></div>
+<div id="NotiflixNotifyWrap" style="width: 280px; z-index: 4001; opacity: 1; inset: auto auto 10px 10px;"></div>
+
+
+</body></html>
